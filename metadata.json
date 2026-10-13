@@ -1,0 +1,6 @@
+{
+  "name": "StudentSphere - Mark Leak Finder",
+  "description": "Pinpoint mark leaks in Class 12 board exam answers against teacher-style keyword marking keys with handwriting readability analysis.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

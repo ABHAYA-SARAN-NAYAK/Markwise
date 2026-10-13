@@ -1,0 +1,2687 @@
+{
+ "meta": {
+  "version": "0.1",
+  "note": "ALL KEYS ARE DRAFTS until a teacher marks verified=true. UI must show a 'Draft key' badge when verified is false.",
+  "subjects": [
+   "Physics",
+   "Chemistry",
+   "Biology",
+   "Accountancy",
+   "Maths"
+  ]
+ },
+ "cards": [
+  {
+   "id": "PHY-01",
+   "subject": "Physics",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Electromagnetic Induction and Alternating Current",
+   "topic": "Lenz's law",
+   "marks": 2,
+   "part": "Part II (2 marks)",
+   "type": "define",
+   "question": "State Lenz's law.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Says the induced current / emf OPPOSES",
+     "marks": 1,
+     "all": [
+      [
+       "oppos",
+       "opposite",
+       "against"
+      ],
+      [
+       "induced"
+      ]
+     ],
+     "tip": "Use the word 'opposes' and say it is the INDUCED current or emf.",
+     "keys": [
+      "opposes",
+      "induced current / emf"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Names the cause: the CHANGE in magnetic flux",
+     "marks": 1,
+     "all": [
+      [
+       "change in flux",
+       "change in magnetic flux",
+       "changing flux",
+       "changing magnetic flux",
+       "change of flux",
+       "flux change",
+       "change in the flux",
+       "change in the magnetic flux",
+       "rate of change of flux",
+       "cause"
+      ]
+     ],
+     "tip": "Say what is opposed: the change in magnetic flux that produces it.",
+     "keys": [
+      "change in magnetic flux"
+     ]
+    }
+   ],
+   "model": "The direction of the induced current (or emf) is such that it opposes the change in magnetic flux that produces it.",
+   "mistakes": [
+    "Writing 'opposes the magnetic field' instead of 'opposes the change in flux'."
+   ],
+   "traps": [
+    {
+     "any": [
+      "opposes the magnetic field",
+      "opposes the field",
+      "opposite to the magnetic field"
+     ],
+     "msg": "Lenz's law opposes the CHANGE in flux, not the magnetic field itself."
+    }
+   ],
+   "minWords": 8,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": [
+    {
+     "label": "Sample A",
+     "text": "Lenz law says the induced current always opposes the change in magnetic flux that produces it."
+    },
+    {
+     "label": "Sample B",
+     "text": "The induced emf is opposite to the magnetic field."
+    }
+   ]
+  },
+  {
+   "id": "PHY-02",
+   "subject": "Physics",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Optics",
+   "topic": "Optical path length",
+   "marks": 2,
+   "part": "Part II (2 marks)",
+   "type": "define",
+   "question": "Define optical path length.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Defines it using refractive index and geometric path (product)",
+     "marks": 1,
+     "all": [
+      [
+       "refractive index",
+       "index of the medium",
+       "index of medium"
+      ],
+      [
+       "product",
+       "multiplied",
+       "multiplication",
+       "times",
+       "nd",
+       "nxd",
+       "μd",
+       "μxd",
+       "n d"
+      ]
+     ],
+     "tip": "Say 'product of refractive index and the actual (geometric) path'.",
+     "keys": [
+      "refractive index",
+      "product",
+      "geometric path"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Gives the formula: optical path = n × d (or μd)",
+     "marks": 1,
+     "all": [
+      [
+       "nd",
+       "n d",
+       "nxd",
+       "n x d",
+       "μd",
+       "μ d",
+       "μxd",
+       "n.d"
+      ]
+     ],
+     "tip": "Write the formula with symbols explained: Δ = nd.",
+     "keys": [
+      "Δ = nd"
+     ]
+    }
+   ],
+   "model": "Optical path length is the product of the refractive index of the medium and the geometric path length travelled by light in it: Δ = nd. It equals the distance light would travel in vacuum in the same time.",
+   "mistakes": [
+    "Writing only 'the path of light' without refractive index."
+   ],
+   "traps": [],
+   "minWords": 6,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "PHY-03",
+   "subject": "Physics",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Current Electricity",
+   "topic": "Internal resistance of a cell",
+   "marks": 2,
+   "part": "Part II (2 marks, compulsory numerical)",
+   "type": "numerical",
+   "question": "A cell supplies a current of 0.9 A through a 2 Ω resistor and 0.3 A through a 7 Ω resistor. Calculate the internal resistance of the cell.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Formula E = I(R + r)",
+     "marks": 0.5,
+     "all": [
+      [
+       "E = I(R + r)",
+       "E = IR + Ir",
+       "E = V + Ir",
+       "I = E/(R + r)",
+       "ir+r"
+      ]
+     ],
+     "tip": "Always write the formula first.",
+     "keys": [
+      "E = I(R + r)"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Both equations substituted",
+     "marks": 0.5,
+     "all": [
+      [
+       "0.9(2 + r)",
+       "0.9 x (2 + r)",
+       "0.9(r + 2)",
+       "0.9 x 2 + 0.9r",
+       "1.8 + 0.9r"
+      ],
+      [
+       "0.3(7 + r)",
+       "0.3 x (7 + r)",
+       "0.3(r + 7)",
+       "0.3 x 7 + 0.3r",
+       "2.1 + 0.3r"
+      ]
+     ],
+     "tip": "Write E = 0.9(2 + r) and E = 0.3(7 + r).",
+     "keys": [
+      "0.9(2+r) = 0.3(7+r)"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Solves correctly: r = 0.5",
+     "marks": 0.5,
+     "all": [
+      [
+       "r = 0.5",
+       "r=0.5",
+       "0.5 ω",
+       "0.5 ohm",
+       "0.6r = 0.3",
+       "0.6r"
+      ]
+     ],
+     "tip": "Solve: 0.6r = 0.3.",
+     "keys": [
+      "r = 0.5"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "Unit (ohm / Ω) written",
+     "marks": 0.5,
+     "all": [
+      [
+       "ω",
+       "ohm",
+       "ohms"
+      ]
+     ],
+     "tip": "No unit = half a mark lost.",
+     "keys": [
+      "Ω"
+     ]
+    }
+   ],
+   "model": "E = I(R + r). 0.9(2 + r) = 0.3(7 + r) → 1.8 + 0.9r = 2.1 + 0.3r → 0.6r = 0.3 → r = 0.5 Ω.",
+   "mistakes": [
+    "Forgetting the unit.",
+    "Using E = IR (leaving out r)."
+   ],
+   "traps": [],
+   "minWords": 4,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "PHY-04",
+   "subject": "Physics",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Dual Nature of Radiation and Matter",
+   "topic": "Photoelectric effect (energy check)",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "numerical",
+   "question": "Will light of wavelength 300 nm eject photoelectrons from calcium metal? (Work function of calcium = 3.20 eV; use hc = 1240 eV nm)",
+   "items": [
+    {
+     "id": "a",
+     "label": "Photon energy formula E = hc/λ",
+     "marks": 1,
+     "all": [
+      [
+       "E = hc/λ",
+       "hc/λ",
+       "hc/lambda",
+       "E = hν",
+       "hν",
+       "h ν",
+       "E = 1240/λ",
+       "1240/300"
+      ]
+     ],
+     "tip": "Write the formula and substitute.",
+     "keys": [
+      "E = hc/λ"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Photon energy ≈ 4.13 eV (with unit)",
+     "marks": 1,
+     "all": [
+      [
+       "4.13",
+       "4.133",
+       "4.14",
+       "4.136",
+       "4.12",
+       "4.1 ev"
+      ],
+      [
+       "ev",
+       "electron volt",
+       "electronvolt"
+      ]
+     ],
+     "tip": "Number AND unit: 4.13 eV.",
+     "keys": [
+      "4.13 eV"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Conclusion: E > φ, so photoelectrons ARE emitted",
+     "marks": 1,
+     "all": [
+      [
+       "E > φ",
+       "e>φ",
+       "greater than",
+       "more than",
+       "exceeds",
+       "4.13 > 3.2",
+       "4.13>3.20",
+       "greater"
+      ],
+      [
+       "emitted",
+       "emission",
+       "eject",
+       "ejected",
+       "photoelectron",
+       "photoelectrons",
+       "yes"
+      ]
+     ],
+     "tip": "State the comparison AND the final answer (yes, emitted).",
+     "keys": [
+      "E > φ",
+      "emitted"
+     ]
+    }
+   ],
+   "model": "E = hc/λ = 1240/300 = 4.13 eV. Since E (4.13 eV) > φ (3.20 eV), photoelectrons are emitted. KEmax = 0.93 eV.",
+   "mistakes": [
+    "Not comparing with the work function.",
+    "Missing eV unit."
+   ],
+   "traps": [],
+   "minWords": 10,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "PHY-05",
+   "subject": "Physics",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Electrostatics",
+   "topic": "Gauss's law: infinitely long charged wire",
+   "marks": 5,
+   "part": "Part IV (5 marks)",
+   "type": "derive",
+   "question": "Using Gauss's law, derive the electric field due to an infinitely long straight uniformly charged wire.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Cylindrical Gaussian surface (coaxial, radius r, length l)",
+     "marks": 1,
+     "all": [
+      [
+       "cylind"
+      ],
+      [
+       "gaussian",
+       "gauss",
+       "coaxial",
+       "imaginary surface"
+      ]
+     ],
+     "tip": "Say 'cylindrical Gaussian surface' and draw it with r and l.",
+     "keys": [
+      "cylindrical Gaussian surface",
+      "radius r",
+      "length l"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "States Gauss's law (flux = q enclosed / ε0)",
+     "marks": 1,
+     "all": [
+      [
+       "gauss law",
+       "gauss's law",
+       "gauss theorem",
+       "gauss's theorem",
+       "∮",
+       "e.da",
+       "eda",
+       "flux"
+      ],
+      [
+       "q/ε0",
+       "q/ε",
+       "enclosed",
+       "qenc",
+       "charge inside",
+       "charge enclosed",
+       "q in"
+      ]
+     ],
+     "tip": "Write: ∮E·dA = q/ε0.",
+     "keys": [
+      "Gauss's law",
+      "q/ε0"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Flux only through the curved surface (ends: E ⟂ dA, flux = 0)",
+     "marks": 1,
+     "all": [
+      [
+       "curved surface",
+       "curved",
+       "lateral",
+       "side"
+      ],
+      [
+       "perpendicular",
+       "90",
+       "zero",
+       "cos 90",
+       "no flux",
+       "negligible",
+       "⊥"
+      ]
+     ],
+     "tip": "Say why the two flat ends give zero flux.",
+     "keys": [
+      "curved surface",
+      "perpendicular",
+      "zero flux"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "E (2πrl) = λl / ε0",
+     "marks": 1,
+     "all": [
+      [
+       "e 2πrl",
+       "e x 2πrl",
+       "e(2πrl)",
+       "2πrl",
+       "2 π r l",
+       "e.2πrl"
+      ],
+      [
+       "λl/ε0",
+       "λl/ε",
+       "q = λl",
+       "charge = λl",
+       "λl",
+       "λ l"
+      ]
+     ],
+     "tip": "Write E × 2πrl = λl/ε0.",
+     "keys": [
+      "E × 2πrl",
+      "λl/ε0"
+     ]
+    },
+    {
+     "id": "e",
+     "label": "Final result E = λ / (2π ε0 r)",
+     "marks": 1,
+     "all": [
+      [
+       "λ/2πε0r",
+       "λ/2πεr",
+       "e = λ/2πε0r",
+       "λ/(2πε0r)",
+       "2kλ/r",
+       "2λ/4πε0r",
+       "1/4πε0 x 2λ/r",
+       "λ/2π ε0 r",
+       "λ/2π ε r"
+      ]
+     ],
+     "tip": "Box the final answer.",
+     "keys": [
+      "E = λ/(2πε0r)"
+     ]
+    }
+   ],
+   "model": "Take a cylindrical Gaussian surface of radius r and length l coaxial with the wire. By symmetry E is radial. Flux through the two flat ends is zero (E ⟂ dA). Through the curved surface flux = E(2πrl). By Gauss's law E(2πrl) = λl/ε0, so E = λ/(2πε0 r).",
+   "mistakes": [
+    "Forgetting to draw the Gaussian surface.",
+    "Not explaining why end flux is zero.",
+    "Dropping ε0 in the final answer."
+   ],
+   "traps": [],
+   "minWords": 40,
+   "ordered": true,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "CHE-01",
+   "subject": "Chemistry",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Chemical Kinetics",
+   "topic": "Half-life of a first order reaction",
+   "marks": 3,
+   "part": "Part III (3 marks, compulsory)",
+   "type": "numerical",
+   "question": "Calculate the half-life of a first order reaction whose rate constant is 1.54 × 10⁻³ s⁻¹.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Formula t½ = 0.693 / k",
+     "marks": 1,
+     "all": [
+      [
+       "0.693/k",
+       "0.693/1.54",
+       "t1/2 = 0.693/k",
+       "t = 0.693/k",
+       "0.693 ÷ k",
+       "0.693/ k"
+      ]
+     ],
+     "tip": "Write the formula first.",
+     "keys": [
+      "t½ = 0.693/k"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Correct substitution",
+     "marks": 1,
+     "all": [
+      [
+       "0.693/1.54 x 10-3",
+       "0.693/1.54e-3",
+       "0.693/0.00154",
+       "0.693/(1.54 x 10-3)",
+       "0.693 ÷ 1.54 x 10-3"
+      ]
+     ],
+     "tip": "Substitute k = 1.54 × 10⁻³.",
+     "keys": [
+      "0.693 / 1.54×10⁻³"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Answer 450 s (number and unit)",
+     "marks": 1,
+     "all": [
+      [
+       "450",
+       "450.0",
+       "450.1",
+       "449.9",
+       "450.5"
+      ],
+      [
+       "s",
+       "sec",
+       "second",
+       "seconds"
+      ]
+     ],
+     "tip": "Number AND unit (seconds).",
+     "keys": [
+      "450 s"
+     ]
+    }
+   ],
+   "model": "t½ = 0.693 / k = 0.693 / (1.54 × 10⁻³ s⁻¹) = 450 s.",
+   "mistakes": [
+    "Missing unit.",
+    "Using ln 2 = 0.963 by mistake."
+   ],
+   "traps": [],
+   "minWords": 4,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "CHE-02",
+   "subject": "Chemistry",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Ionic Equilibrium",
+   "topic": "Solubility product (Ksp)",
+   "marks": 2,
+   "part": "Part II (2 marks)",
+   "type": "define",
+   "question": "Define solubility product constant (Ksp).",
+   "items": [
+    {
+     "id": "a",
+     "label": "Product of the molar concentrations of the ions",
+     "marks": 1,
+     "all": [
+      [
+       "product"
+      ],
+      [
+       "concentration",
+       "concentrations",
+       "molar concentration",
+       "ionic concentration",
+       "ions"
+      ]
+     ],
+     "tip": "Say 'product of the molar concentrations of ions'.",
+     "keys": [
+      "product",
+      "molar concentrations",
+      "ions"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Each raised to the power of its stoichiometric coefficient",
+     "marks": 0.5,
+     "all": [
+      [
+       "power",
+       "raised",
+       "exponent",
+       "stoichiometric",
+       "coefficient",
+       "coefficients"
+      ]
+     ],
+     "tip": "Mention the power (coefficient in the balanced equation).",
+     "keys": [
+      "raised to the power",
+      "stoichiometric coefficient"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "In a saturated solution at a given temperature",
+     "marks": 0.5,
+     "all": [
+      [
+       "saturated"
+      ]
+     ],
+     "tip": "Always say 'saturated solution' (and the temperature).",
+     "keys": [
+      "saturated solution",
+      "given temperature"
+     ]
+    }
+   ],
+   "model": "Ksp is the product of the molar concentrations of the ions of a sparingly soluble salt, each raised to the power of its stoichiometric coefficient, in a saturated solution at a given temperature.",
+   "mistakes": [
+    "Forgetting 'saturated solution'."
+   ],
+   "traps": [],
+   "minWords": 8,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": [
+    {
+     "label": "Sample A",
+     "text": "Ksp is the product of the molar concentrations of ions in a saturated solution at a given temperature, each raised to the power of its coefficient."
+    },
+    {
+     "label": "Sample B",
+     "text": "It is the constant of a salt that dissolves in water."
+    }
+   ]
+  },
+  {
+   "id": "CHE-03",
+   "subject": "Chemistry",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Metallurgy",
+   "topic": "Mond process (refining of nickel)",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "derive",
+   "question": "Describe the Mond carbonyl process used for refining crude nickel.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Ni reacts with CO at about 330–350 K to form Ni(CO)4",
+     "marks": 1,
+     "all": [
+      [
+       "ni(co)4",
+       "nickel tetracarbonyl",
+       "nickel carbonyl"
+      ],
+      [
+       "330",
+       "350",
+       "50",
+       "low temperature",
+       "323",
+       "lower temperature"
+      ]
+     ],
+     "tip": "Write the equation Ni + 4CO → Ni(CO)4 and the temperature.",
+     "keys": [
+      "Ni + 4CO → Ni(CO)4",
+      "330–350 K"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Ni(CO)4 is volatile, so it separates from the impurities",
+     "marks": 1,
+     "all": [
+      [
+       "volatile",
+       "gas",
+       "vapour",
+       "vapor",
+       "gaseous"
+      ],
+      [
+       "impurit",
+       "separat",
+       "pure",
+       "purif"
+      ]
+     ],
+     "tip": "Say it is volatile and leaves the impurities behind.",
+     "keys": [
+      "volatile",
+      "impurities left behind"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Heated at 450–470 K it decomposes to pure Ni and CO",
+     "marks": 1,
+     "all": [
+      [
+       "450",
+       "470",
+       "decompos",
+       "higher temperature",
+       "high temperature",
+       "heated",
+       "180",
+       "200"
+      ],
+      [
+       "pure",
+       "ni + 4co",
+       "co regenerated",
+       "co is recycled",
+       "carbon monoxide"
+      ]
+     ],
+     "tip": "Write Ni(CO)4 → Ni + 4CO at 450–470 K.",
+     "keys": [
+      "450–470 K",
+      "pure Ni",
+      "CO recycled"
+     ]
+    }
+   ],
+   "model": "Impure Ni + 4CO (330–350 K) → Ni(CO)4 (volatile). Ni(CO)4 is heated at 450–470 K and decomposes: Ni(CO)4 → Ni (pure) + 4CO. The CO is recycled.",
+   "mistakes": [
+    "Missing temperatures.",
+    "Not writing both equations."
+   ],
+   "traps": [],
+   "minWords": 20,
+   "ordered": true,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "CHE-04",
+   "subject": "Chemistry",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Ionic Equilibrium",
+   "topic": "pH of 0.1 M acetic acid",
+   "marks": 5,
+   "part": "Part IV (5 marks)",
+   "type": "numerical",
+   "question": "Calculate the pH of a 0.1 M acetic acid solution. (Ka = 1.8 × 10⁻⁵)",
+   "items": [
+    {
+     "id": "a",
+     "label": "Dissociation equation CH3COOH ⇌ CH3COO⁻ + H⁺",
+     "marks": 1,
+     "all": [
+      [
+       "ch3cooh",
+       "acetic acid"
+      ],
+      [
+       "ch3coo",
+       "⇌",
+       "<=>",
+       "<->",
+       "h+",
+       "h3o+"
+      ]
+     ],
+     "tip": "Write the equilibrium first.",
+     "keys": [
+      "CH3COOH ⇌ CH3COO⁻ + H⁺"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Formula [H⁺] = √(Ka × C)  (or Ka = Cα²)",
+     "marks": 1,
+     "all": [
+      [
+       "√(Ka C)",
+       "√(Ka x C)",
+       "sqrt(Ka C)",
+       "[H+] = √KaC",
+       "Ka = Cα2",
+       "Ka = C α2",
+       "[H+] = Cα",
+       "√Ka x C",
+       "√Kac"
+      ]
+     ],
+     "tip": "Write the formula before substituting.",
+     "keys": [
+      "[H⁺] = √(Ka C)"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Correct substitution",
+     "marks": 1,
+     "all": [
+      [
+       "1.8 x 10-5 x 0.1",
+       "1.8 x 10-6",
+       "1.8e-6",
+       "√1.8 x 10-6",
+       "0.1 x 1.8 x 10-5",
+       "1.8x10-5x0.1"
+      ]
+     ],
+     "tip": "Show Ka × C = 1.8 × 10⁻⁶.",
+     "keys": [
+      "1.8×10⁻⁵ × 0.1"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "[H⁺] = 1.34 × 10⁻³ M",
+     "marks": 1,
+     "all": [
+      [
+       "1.34 x 10-3",
+       "1.342 x 10-3",
+       "1.3 x 10-3",
+       "0.00134",
+       "1.34e-3",
+       "1.35 x 10-3",
+       "1.341 x 10-3"
+      ]
+     ],
+     "tip": "Write [H⁺] with unit M (mol/L).",
+     "keys": [
+      "1.34×10⁻³ M"
+     ]
+    },
+    {
+     "id": "e",
+     "label": "pH = −log[H⁺] = 2.87",
+     "marks": 1,
+     "all": [
+      [
+       "2.87",
+       "2.872",
+       "2.88",
+       "2.86"
+      ]
+     ],
+     "tip": "pH = −log(1.34 × 10⁻³) = 2.87.",
+     "keys": [
+      "pH = 2.87"
+     ]
+    }
+   ],
+   "model": "CH3COOH ⇌ CH3COO⁻ + H⁺. [H⁺] = √(Ka C) = √(1.8×10⁻⁵ × 0.1) = 1.34×10⁻³ M. pH = −log[H⁺] = 2.87.",
+   "mistakes": [
+    "Writing pH = log[H⁺] (missing the minus sign).",
+    "Using Ka directly as [H⁺]."
+   ],
+   "traps": [
+    {
+     "any": [
+      "pH = log[H+]",
+      "pH=log H",
+      "ph = log h+"
+     ],
+     "msg": "pH = −log[H⁺]. The minus sign is missing."
+    }
+   ],
+   "minWords": 20,
+   "ordered": true,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "CHE-05",
+   "subject": "Chemistry",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Solid State",
+   "topic": "Tetrahedral and octahedral voids",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "differentiate",
+   "question": "Differentiate between tetrahedral voids and octahedral voids.",
+   "items": [
+    {
+     "id": "p",
+     "kind": "pool",
+     "label": "Any three differences",
+     "each": 1,
+     "max": 3,
+     "marks": 3,
+     "points": [
+      {
+       "label": "Number per atom: 2 tetrahedral voids, 1 octahedral void per atom",
+       "any": [
+        "2n",
+        "2 per atom",
+        "two per atom",
+        "twice the number",
+        "n octahedral",
+        "1 per atom",
+        "one per atom",
+        "2 voids per atom",
+        "2n tetrahedral",
+        "n octahedral voids"
+       ]
+      },
+      {
+       "label": "Coordination: surrounded by 4 spheres vs 6 spheres",
+       "any": [
+        "coordination number 4",
+        "coordination number of 4",
+        "coordination number 6",
+        "cn = 4",
+        "cn = 6",
+        "4 spheres",
+        "6 spheres",
+        "four spheres",
+        "six spheres",
+        "4 atoms",
+        "6 atoms",
+        "surrounded by 4",
+        "surrounded by 6"
+       ]
+      },
+      {
+       "label": "Size: tetrahedral is smaller (radius ratio 0.225–0.414); octahedral is larger (0.414–0.732)",
+       "any": [
+        "smaller",
+        "larger",
+        "bigger",
+        "0.225",
+        "0.414",
+        "0.732",
+        "radius ratio"
+       ]
+      },
+      {
+       "label": "Formation: sphere sits in the dip of 3 spheres vs two opposite triangular voids",
+       "any": [
+        "triangular void",
+        "depression",
+        "three spheres",
+        "3 spheres",
+        "two triangular",
+        "2 triangular",
+        "opposite",
+        "centres of 4",
+        "centres of 6"
+       ]
+      }
+     ],
+     "tip": ""
+    }
+   ],
+   "model": "Tetrahedral void: 2 per atom, surrounded by 4 spheres (CN 4), smaller (radius ratio 0.225–0.414). Octahedral void: 1 per atom, surrounded by 6 spheres (CN 6), larger (radius ratio 0.414–0.732).",
+   "mistakes": [
+    "Writing only one side of each difference."
+   ],
+   "traps": [],
+   "minWords": 14,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": [
+    {
+     "label": "Sample A",
+     "text": "Tetrahedral void is surrounded by 4 spheres and is smaller, with 2 voids per atom. Octahedral void is surrounded by 6 spheres and is larger, with 1 void per atom."
+    },
+    {
+     "label": "Sample B",
+     "text": "Tetrahedral voids are tetrahedral in shape and octahedral voids are octahedral in shape."
+    }
+   ]
+  },
+  {
+   "id": "CHE-06",
+   "subject": "Chemistry",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Chemistry in Everyday Life / Polymers",
+   "topic": "Condensation polymerisation",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "define",
+   "question": "Define condensation polymerisation and give two examples of condensation polymers.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Definition: monomers join with loss of small molecules (water, HCl, NH3...)",
+     "marks": 1,
+     "all": [
+      [
+       "condensation"
+      ],
+      [
+       "small molecule",
+       "small molecules",
+       "water",
+       "hcl",
+       "nh3",
+       "ammonia",
+       "by-product",
+       "byproduct",
+       "eliminat",
+       "loss of",
+       "removal of"
+      ]
+     ],
+     "tip": "Say that a small molecule is lost at each step.",
+     "keys": [
+      "small molecules lost",
+      "bi- or poly-functional monomers"
+     ]
+    },
+    {
+     "id": "e",
+     "kind": "pool",
+     "label": "Any two examples",
+     "each": 1,
+     "max": 2,
+     "marks": 2,
+     "points": [
+      {
+       "label": "Nylon 6,6",
+       "any": [
+        "nylon-6,6",
+        "nylon 6,6",
+        "nylon66",
+        "nylon-66",
+        "nylon"
+       ]
+      },
+      {
+       "label": "Terylene / Dacron / PET",
+       "any": [
+        "terylene",
+        "dacron",
+        "pet",
+        "polyethylene terephthalate"
+       ]
+      },
+      {
+       "label": "Bakelite",
+       "any": [
+        "bakelite"
+       ]
+      },
+      {
+       "label": "Melamine-formaldehyde",
+       "any": [
+        "melamine"
+       ]
+      }
+     ],
+     "tip": ""
+    }
+   ],
+   "model": "Condensation polymerisation is the repeated condensation of bi- or poly-functional monomers with the loss of small molecules such as water, HCl or NH3. Examples: Nylon 6,6, Terylene, Bakelite.",
+   "mistakes": [
+    "Naming only one example."
+   ],
+   "traps": [],
+   "minWords": 8,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "BIO-01",
+   "subject": "Biology",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Reproduction in Plants (Bio-Botany)",
+   "topic": "Mellitophily",
+   "marks": 2,
+   "part": "Part II (2 marks)",
+   "type": "define",
+   "question": "Define the term 'Mellitophily'.",
+   "items": [
+    {
+     "id": "a",
+     "label": "It is a type of POLLINATION",
+     "marks": 1,
+     "all": [
+      [
+       "pollination",
+       "pollinat"
+      ]
+     ],
+     "tip": "Say it is pollination.",
+     "keys": [
+      "pollination"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Carried out by BEES (honey bees)",
+     "marks": 1,
+     "all": [
+      [
+       "bee",
+       "bees",
+       "honey bee",
+       "honeybee",
+       "honey bees",
+       "honeybees",
+       "apis"
+      ]
+     ],
+     "tip": "Say who carries the pollen: bees.",
+     "keys": [
+      "honey bees"
+     ]
+    }
+   ],
+   "model": "Mellitophily is pollination brought about by honey bees.",
+   "mistakes": [
+    "Confusing it with entomophily (insects in general)."
+   ],
+   "traps": [],
+   "minWords": 5,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "BIO-02",
+   "subject": "Biology",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Principles and Processes of Biotechnology",
+   "topic": "Insertional inactivation",
+   "marks": 2,
+   "part": "Part II (2 marks)",
+   "type": "explain",
+   "question": "Explain the principle of insertional inactivation used to select recombinant bacteria.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Foreign DNA inserted inside the lacZ (β-galactosidase) gene inactivates it",
+     "marks": 0.5,
+     "all": [
+      [
+       "lacz",
+       "β-galactosidase",
+       "beta galactosidase",
+       "beta-galactosidase",
+       "galactosidase"
+      ],
+      [
+       "insert",
+       "foreign dna",
+       "recombinant dna",
+       "inactiv",
+       "disrupt"
+      ]
+     ],
+     "tip": "Name the gene (lacZ) and say the insert disrupts it.",
+     "keys": [
+      "lacZ",
+      "β-galactosidase",
+      "inactivated"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Non-recombinants: active enzyme → BLUE colonies (with X-gal)",
+     "marks": 0.5,
+     "all": [
+      [
+       "blue"
+      ],
+      [
+       "non-recombinant",
+       "nonrecombinant",
+       "non recombinant",
+       "without insert",
+       "intact",
+       "active enzyme",
+       "normal",
+       "x-gal",
+       "chromogenic"
+      ]
+     ],
+     "tip": "Say blue colonies are non-recombinant.",
+     "keys": [
+      "blue colonies",
+      "non-recombinant"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Recombinants: no enzyme → WHITE colonies",
+     "marks": 1,
+     "all": [
+      [
+       "white"
+      ],
+      [
+       "recombinant",
+       "inactive",
+       "insert",
+       "cannot",
+       "no enzyme",
+       "unable",
+       "inactivated"
+      ]
+     ],
+     "tip": "Say white colonies are recombinant.",
+     "keys": [
+      "white colonies",
+      "recombinant"
+     ]
+    }
+   ],
+   "model": "A foreign gene is inserted into the lacZ gene, so β-galactosidase is not made. Non-recombinant colonies make the enzyme and turn blue with X-gal; recombinant colonies stay white.",
+   "mistakes": [
+    "Swapping blue and white."
+   ],
+   "traps": [],
+   "minWords": 10,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "BIO-03",
+   "subject": "Biology",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Biotechnology Applications",
+   "topic": "DNA fingerprinting steps",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "derive",
+   "question": "Outline the steps of DNA fingerprinting (Southern blot with VNTR probes).",
+   "items": [
+    {
+     "id": "s",
+     "kind": "pool",
+     "label": "Six steps, half a mark each",
+     "each": 0.5,
+     "max": 3,
+     "marks": 3,
+     "points": [
+      {
+       "label": "Isolation of DNA",
+       "any": [
+        "isolation of dna",
+        "isolate dna",
+        "extraction of dna",
+        "extract dna",
+        "dna isolation",
+        "dna extraction",
+        "isolating dna",
+        "isolation of genomic dna"
+       ]
+      },
+      {
+       "label": "Digestion with restriction endonuclease",
+       "any": [
+        "restriction enzyme",
+        "restriction endonuclease",
+        "digestion",
+        "digested",
+        "cutting dna",
+        "cut the dna"
+       ]
+      },
+      {
+       "label": "Separation by gel electrophoresis",
+       "any": [
+        "electrophoresis",
+        "agarose",
+        "gel"
+       ]
+      },
+      {
+       "label": "Blotting onto a nitrocellulose / nylon membrane",
+       "any": [
+        "blotting",
+        "southern blot",
+        "nitrocellulose",
+        "nylon membrane",
+        "transfer to membrane",
+        "transferred to membrane"
+       ]
+      },
+      {
+       "label": "Hybridisation with a labelled VNTR probe",
+       "any": [
+        "hybridi",
+        "probe",
+        "radioactive probe",
+        "labelled probe",
+        "labeled probe"
+       ]
+      },
+      {
+       "label": "Detection by autoradiography",
+       "any": [
+        "autoradiograph",
+        "x-ray film",
+        "x ray film",
+        "xray film",
+        "detection of bands",
+        "band pattern",
+        "visualis",
+        "visualiz"
+       ]
+      }
+     ],
+     "tip": "Write the steps in order, one per line."
+    }
+   ],
+   "model": "1 Isolate DNA → 2 Digest with restriction endonuclease → 3 Gel electrophoresis → 4 Blot onto nitrocellulose/nylon membrane → 5 Hybridise with labelled VNTR probe → 6 Autoradiography.",
+   "mistakes": [
+    "Missing the hybridisation step."
+   ],
+   "traps": [],
+   "minWords": 18,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "BIO-04",
+   "subject": "Biology",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Plant Breeding",
+   "topic": "Heterosis (hybrid vigour)",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "explain",
+   "question": "Write a short note on heterosis (hybrid vigour).",
+   "items": [
+    {
+     "id": "a",
+     "label": "Definition: the hybrid (F1) is superior to its parents",
+     "marks": 1,
+     "all": [
+      [
+       "superior",
+       "superiority",
+       "greater vigour",
+       "greater vigor",
+       "increased vigour",
+       "better than",
+       "more vigorous",
+       "exceeds",
+       "increase in vigour"
+      ],
+      [
+       "parent",
+       "parents",
+       "parental",
+       "inbred"
+      ]
+     ],
+     "tip": "Say 'F1 hybrid superior to both parents'.",
+     "keys": [
+      "F1 hybrid",
+      "superior to parents"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Cause: dominance / over-dominance hypothesis",
+     "marks": 1,
+     "all": [
+      [
+       "dominance",
+       "dominant",
+       "overdominance",
+       "over dominance",
+       "over-dominance",
+       "heterozygos",
+       "favourable genes",
+       "favorable genes",
+       "deleterious",
+       "masking",
+       "complementation"
+      ]
+     ],
+     "tip": "Name at least one hypothesis (dominance or over-dominance).",
+     "keys": [
+      "dominance",
+      "over-dominance"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Example or importance (yield, hybrid maize, lost in F2)",
+     "marks": 1,
+     "all": [
+      [
+       "maize",
+       "corn",
+       "bajra",
+       "pearl millet",
+       "sorghum",
+       "rice",
+       "tomato",
+       "yield",
+       "productivity",
+       "commercial",
+       "hybrid seeds",
+       "f1 hybrids",
+       "lost in",
+       "not retained",
+       "f2",
+       "next generation",
+       "vegetative"
+      ]
+     ],
+     "tip": "Give one example such as hybrid maize, or the use (higher yield).",
+     "keys": [
+      "hybrid maize",
+      "higher yield"
+     ]
+    }
+   ],
+   "model": "Heterosis is the superiority of the F1 hybrid over both its parents in vigour, size and yield. It is explained by the dominance and over-dominance hypotheses. Example: hybrid maize. The vigour is lost in the F2 generation.",
+   "mistakes": [
+    "Not mentioning the parents."
+   ],
+   "traps": [],
+   "minWords": 14,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "BIO-05",
+   "subject": "Biology",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Immunology (Bio-Zoology)",
+   "topic": "Active vs passive immunity",
+   "marks": 5,
+   "part": "Part IV (5 marks)",
+   "type": "differentiate",
+   "question": "Differentiate between active immunity and passive immunity.",
+   "items": [
+    {
+     "id": "p",
+     "kind": "pool",
+     "label": "Any five differences (1 mark each)",
+     "each": 1,
+     "max": 5,
+     "marks": 5,
+     "points": [
+      {
+       "label": "Antibody source: own body vs readymade from outside",
+       "any": [
+        "own antibodies",
+        "produced by the body",
+        "produced in the host",
+        "readymade",
+        "ready-made",
+        "ready made",
+        "given from outside",
+        "antibodies are given",
+        "antibodies are injected",
+        "injected antibod",
+        "antiserum"
+       ]
+      },
+      {
+       "label": "How acquired: infection / vaccine vs antiserum, colostrum, placenta",
+       "any": [
+        "vaccin",
+        "infection",
+        "colostrum",
+        "placenta",
+        "antiserum",
+        "serum",
+        "mother"
+       ]
+      },
+      {
+       "label": "Onset: slow vs immediate",
+       "any": [
+        "slow",
+        "immediate",
+        "quick",
+        "fast",
+        "rapid",
+        "delayed",
+        "takes time",
+        "time taking",
+        "lag"
+       ]
+      },
+      {
+       "label": "Duration: long lasting vs short lived",
+       "any": [
+        "long lasting",
+        "long-lasting",
+        "long term",
+        "long-term",
+        "permanent",
+        "short lived",
+        "short-lived",
+        "short term",
+        "short-term",
+        "temporary",
+        "lasts for long",
+        "brief"
+       ]
+      },
+      {
+       "label": "Memory cells formed vs not formed",
+       "any": [
+        "memory"
+       ]
+      },
+      {
+       "label": "Booster / second exposure gives a stronger response vs not",
+       "any": [
+        "booster",
+        "second exposure",
+        "secondary response",
+        "re-exposure",
+        "reinfection",
+        "repeat"
+       ]
+      },
+      {
+       "label": "Immune system activated vs not activated",
+       "any": [
+        "not stimulat",
+        "not activated",
+        "immune system is stimulated",
+        "stimulates",
+        "stimulated",
+        "activates the immune"
+       ]
+      }
+     ],
+     "tip": "Write two-sided points: Active … / Passive … for each point."
+    }
+   ],
+   "model": "Active: body makes its own antibodies, slow onset, long lasting, memory cells formed, acquired by infection or vaccine. Passive: readymade antibodies given (antiserum, colostrum), immediate, short lived, no memory cells.",
+   "mistakes": [
+    "Writing the same point twice.",
+    "Writing one side only."
+   ],
+   "traps": [],
+   "minWords": 25,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": [
+    {
+     "label": "Sample A",
+     "text": "Active immunity: the body produces its own antibodies, it is slow and long lasting, and memory cells are formed. Passive immunity: readymade antibodies are given from outside, it is immediate but short lived and no memory cells are formed. Active immunity is gained by vaccination or infection, passive by colostrum or antiserum."
+    },
+    {
+     "label": "Sample B",
+     "text": "Active immunity is good for the body and passive immunity is also good for the body."
+    }
+   ]
+  },
+  {
+   "id": "BIO-06",
+   "subject": "Biology",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Evolution (Hardy-Weinberg)",
+   "topic": "Allele frequency calculation",
+   "marks": 4,
+   "part": "Case based (4 marks)",
+   "type": "numerical",
+   "question": "In a population of 1,500 beetles, black (B) is dominant over red (b). 40% of the beetles are red. Find (a) q, (b) p, (c) frequency of heterozygotes (2pq), (d) the number of homozygous black (BB) beetles.",
+   "items": [
+    {
+     "id": "a",
+     "label": "q² = 0.40 → q = 0.63",
+     "marks": 1,
+     "all": [
+      [
+       "0.63",
+       "0.632",
+       "√0.4",
+       "√0.40"
+      ]
+     ],
+     "tip": "Red = bb, so q² = 0.40; take the square root.",
+     "keys": [
+      "q = 0.63"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "p = 1 − q = 0.37",
+     "marks": 0.5,
+     "all": [
+      [
+       "0.37",
+       "0.368"
+      ]
+     ],
+     "tip": "p + q = 1.",
+     "keys": [
+      "p = 0.37"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "2pq = 0.47 (formula + value)",
+     "marks": 1.5,
+     "all": [
+      [
+       "2pq"
+      ],
+      [
+       "0.47",
+       "0.465",
+       "47%",
+       "46.5%",
+       "0.46"
+      ]
+     ],
+     "tip": "Write the formula 2pq, then the value.",
+     "keys": [
+      "2pq",
+      "0.47"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "BB = p² × 1500 ≈ 203",
+     "marks": 1,
+     "all": [
+      [
+       "203",
+       "202",
+       "204",
+       "210"
+      ]
+     ],
+     "tip": "p² = 0.135, then multiply by 1500.",
+     "keys": [
+      "≈ 203 beetles"
+     ]
+    }
+   ],
+   "model": "q² = 0.40 → q = 0.632; p = 0.368; 2pq = 0.465 (≈ 47%); BB = p² × 1500 = 0.135 × 1500 ≈ 203.",
+   "mistakes": [
+    "Taking q = 0.40 instead of √0.40."
+   ],
+   "traps": [],
+   "minWords": 10,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "ACC-01",
+   "subject": "Accountancy",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Partnership Accounts",
+   "topic": "Rules when there is no partnership deed",
+   "marks": 2,
+   "part": "Part II (2 marks)",
+   "type": "list",
+   "question": "State any two rules that apply when there is no partnership deed.",
+   "items": [
+    {
+     "id": "p",
+     "kind": "pool",
+     "label": "Any two rules (1 mark each)",
+     "each": 1,
+     "max": 2,
+     "marks": 2,
+     "points": [
+      {
+       "label": "Profits and losses shared equally",
+       "any": [
+        "equally",
+        "equal share",
+        "equal ratio",
+        "in equal",
+        "1:1"
+       ]
+      },
+      {
+       "label": "No interest on capital",
+       "any": [
+        "no interest on capital",
+        "interest on capital is not",
+        "no interest is allowed on capital",
+        "not entitled to interest on capital",
+        "not allowed interest on capital"
+       ]
+      },
+      {
+       "label": "No salary / remuneration to a partner",
+       "any": [
+        "no salary",
+        "no remuneration",
+        "not entitled to salary",
+        "not entitled to any remuneration",
+        "no commission"
+       ]
+      },
+      {
+       "label": "Interest on a partner's loan at 6% p.a.",
+       "any": [
+        "6%",
+        "6 %",
+        "6 percent",
+        "six percent",
+        "6 per cent",
+        "6% p.a"
+       ]
+      },
+      {
+       "label": "No interest on drawings",
+       "any": [
+        "no interest on drawings",
+        "interest on drawings is not charged",
+        "no interest is charged on drawings"
+       ]
+      }
+     ],
+     "tip": ""
+    }
+   ],
+   "model": "Any two: profits shared equally; no interest on capital; no salary or commission; loan from a partner earns 6% p.a.; no interest charged on drawings.",
+   "mistakes": [
+    "Writing 'interest on capital 6%' (wrong: there is no interest on capital)."
+   ],
+   "traps": [
+    {
+     "any": [
+      "interest on capital 6%",
+      "6% on capital",
+      "interest on capital at 6%"
+     ],
+     "msg": "Without a deed there is NO interest on capital. The 6% rate is for a partner's LOAN."
+    }
+   ],
+   "minWords": 8,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Question type from uploaded TN papers. Key drafted by Claude. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "ACC-02",
+   "subject": "Accountancy",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Dissolution of a Firm",
+   "topic": "Partner's remuneration for realisation",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "journal",
+   "question": "Rusting, a partner, gets 2% commission on assets realised (₹1,08,000) and 10% on the amount paid to other partners (₹84,660). Calculate his remuneration and pass the journal entry.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Commission on assets: ₹2,160",
+     "marks": 0.5,
+     "all": [
+      [
+       "2160"
+      ]
+     ],
+     "tip": "2% × 1,08,000 = 2,160.",
+     "keys": [
+      "₹2,160"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Commission on payments to partners: ₹8,466",
+     "marks": 0.5,
+     "all": [
+      [
+       "8466"
+      ]
+     ],
+     "tip": "10% × 84,660 = 8,466.",
+     "keys": [
+      "₹8,466"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Total remuneration: ₹10,626",
+     "marks": 0.5,
+     "all": [
+      [
+       "10626"
+      ]
+     ],
+     "tip": "2,160 + 8,466 = 10,626.",
+     "keys": [
+      "₹10,626"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "Journal: Realisation A/c Dr. To Rusting's Capital A/c",
+     "marks": 1,
+     "all": [
+      [
+       "realisation"
+      ],
+      [
+       "capital"
+      ],
+      [
+       "dr",
+       "debit"
+      ]
+     ],
+     "tip": "Debit Realisation, credit Rusting's Capital.",
+     "keys": [
+      "Realisation A/c Dr.",
+      "To Capital A/c"
+     ]
+    },
+    {
+     "id": "e",
+     "label": "Narration (Being ...)",
+     "marks": 0.5,
+     "all": [
+      [
+       "being"
+      ]
+     ],
+     "tip": "Every journal entry needs a narration.",
+     "keys": [
+      "(Being ...)"
+     ]
+    }
+   ],
+   "model": "Commission = 2,160 + 8,466 = ₹10,626. Realisation A/c Dr. 10,626 To Rusting's Capital A/c 10,626 (Being commission credited to partner's capital).",
+   "mistakes": [
+    "Forgetting the narration."
+   ],
+   "traps": [],
+   "minWords": 8,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "ACC-03",
+   "subject": "Accountancy",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Admission of a Partner",
+   "topic": "New profit sharing ratio",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "numerical",
+   "question": "A and B share profits 3:2. C is admitted for a 1/5 share, which he takes 1/10 from A and 1/10 from B. Find the new profit sharing ratio.",
+   "items": [
+    {
+     "id": "a",
+     "label": "A's new share = 3/5 − 1/10 = 5/10",
+     "marks": 1,
+     "all": [
+      [
+       "5/10",
+       "1/2",
+       "3/5 - 1/10",
+       "6/10 - 1/10",
+       "half"
+      ]
+     ],
+     "tip": "Show: 3/5 − 1/10.",
+     "keys": [
+      "5/10"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "B's new share = 2/5 − 1/10 = 3/10",
+     "marks": 1,
+     "all": [
+      [
+       "3/10",
+       "2/5 - 1/10",
+       "4/10 - 1/10"
+      ]
+     ],
+     "tip": "Show: 2/5 − 1/10.",
+     "keys": [
+      "3/10"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "New ratio A : B : C = 5 : 3 : 2",
+     "marks": 1,
+     "all": [
+      [
+       "5:3:2",
+       "5 : 3 : 2",
+       "5,3,2",
+       "5-3-2",
+       "5 3 2"
+      ]
+     ],
+     "tip": "Write the final ratio.",
+     "keys": [
+      "5 : 3 : 2"
+     ]
+    }
+   ],
+   "model": "A = 3/5 − 1/10 = 5/10; B = 2/5 − 1/10 = 3/10; C = 1/5 = 2/10. New ratio = 5 : 3 : 2.",
+   "mistakes": [
+    "Giving C 1/10 instead of 1/5."
+   ],
+   "traps": [],
+   "minWords": 4,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Original practice question written by Claude; numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "ACC-04",
+   "subject": "Accountancy",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Retirement of a Partner",
+   "topic": "Gaining ratio and new ratio",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "numerical",
+   "question": "A, B and C share profits 4:2:3. C retires and his share is taken by A and B in the ratio 3:2. Find the new ratio of A and B.",
+   "items": [
+    {
+     "id": "a",
+     "label": "C's share = 3/9 (= 1/3)",
+     "marks": 0.5,
+     "all": [
+      [
+       "3/9",
+       "1/3"
+      ]
+     ],
+     "tip": "C's share = 3/(4+2+3).",
+     "keys": [
+      "3/9"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "A gains 3/5 of 1/3 = 1/5",
+     "marks": 1,
+     "all": [
+      [
+       "1/5",
+       "9/45",
+       "3/15",
+       "3/9 x 3/5",
+       "0.2"
+      ]
+     ],
+     "tip": "A's gain = 3/9 × 3/5.",
+     "keys": [
+      "1/5"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "B gains 2/5 of 1/3 = 2/15",
+     "marks": 1,
+     "all": [
+      [
+       "2/15",
+       "6/45",
+       "3/9 x 2/5"
+      ]
+     ],
+     "tip": "B's gain = 3/9 × 2/5.",
+     "keys": [
+      "2/15"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "New ratio A : B = 29 : 16",
+     "marks": 0.5,
+     "all": [
+      [
+       "29:16",
+       "29 : 16",
+       "29,16",
+       "29/45",
+       "16/45"
+      ]
+     ],
+     "tip": "A = 4/9 + 1/5 = 29/45, B = 2/9 + 2/15 = 16/45.",
+     "keys": [
+      "29 : 16"
+     ]
+    }
+   ],
+   "model": "C's share = 3/9. A gains 3/9 × 3/5 = 1/5, B gains 3/9 × 2/5 = 2/15. New A = 4/9 + 1/5 = 29/45; New B = 2/9 + 2/15 = 16/45. New ratio = 29 : 16.",
+   "mistakes": [
+    "Dividing C's share equally between A and B."
+   ],
+   "traps": [],
+   "minWords": 4,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Original practice question written by Claude; numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "ACC-05",
+   "subject": "Accountancy",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Company Accounts",
+   "topic": "Forfeiture and re-issue of shares",
+   "marks": 4,
+   "part": "Part IV (4 marks)",
+   "type": "journal",
+   "question": "Zenith Ltd. forfeited 4,500 equity shares of ₹10 each (issued at par) for non-payment of the final call of ₹4 per share. All were re-issued as fully paid for ₹5 per share. Pass the entries and prepare the Share Forfeiture A/c.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Forfeiture entry: Share Capital Dr 45,000; To Forfeited Shares 27,000; To Final Call 18,000",
+     "marks": 1,
+     "all": [
+      [
+       "share capital"
+      ],
+      [
+       "forfeited shares",
+       "forfeiture"
+      ],
+      [
+       "27000"
+      ],
+      [
+       "18000"
+      ]
+     ],
+     "tip": "Debit share capital with the CALLED-UP amount.",
+     "keys": [
+      "Share Capital A/c Dr.",
+      "Forfeited Shares A/c 27,000",
+      "Final Call 18,000"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Re-issue entry: Bank Dr 22,500; Forfeited Shares Dr 22,500; To Share Capital 45,000",
+     "marks": 1,
+     "all": [
+      [
+       "bank"
+      ],
+      [
+       "22500"
+      ],
+      [
+       "forfeited shares"
+      ],
+      [
+       "45000"
+      ]
+     ],
+     "tip": "Discount on re-issue is debited to Forfeited Shares.",
+     "keys": [
+      "Bank A/c 22,500",
+      "Forfeited Shares A/c 22,500",
+      "Share Capital 45,000"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Capital Reserve ₹4,500 (27,000 − 22,500)",
+     "marks": 1,
+     "all": [
+      [
+       "capital reserve"
+      ],
+      [
+       "4500"
+      ]
+     ],
+     "tip": "Gain on re-issue goes to Capital Reserve.",
+     "keys": [
+      "Capital Reserve A/c",
+      "₹4,500"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "Share Forfeiture A/c prepared and balanced (₹27,000)",
+     "marks": 1,
+     "all": [
+      [
+       "capital reserve",
+       "share capital"
+      ],
+      [
+       "27000"
+      ],
+      [
+       "total",
+       "balance",
+       "balancing"
+      ]
+     ],
+     "tip": "Show both sides totalling ₹27,000.",
+     "keys": [
+      "Share Forfeiture A/c",
+      "Total 27,000"
+     ]
+    }
+   ],
+   "model": "Forfeiture: Share Capital Dr 45,000 To Forfeited Shares 27,000, To Final Call 18,000. Re-issue: Bank Dr 22,500, Forfeited Shares Dr 22,500 To Share Capital 45,000. Transfer: Forfeited Shares Dr 4,500 To Capital Reserve 4,500.",
+   "mistakes": [
+    "Debiting Share Capital with ₹27,000 instead of ₹45,000."
+   ],
+   "traps": [],
+   "minWords": 20,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "MAT-01",
+   "subject": "Maths",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Vector Algebra",
+   "topic": "Orthogonal vectors",
+   "marks": 2,
+   "part": "Part II (2 marks)",
+   "type": "numerical",
+   "question": "Find λ such that (b + λc) is perpendicular to a, where a = 2i + 2j + 3k, b = −i + 2j + k, c = 3i + j.",
+   "items": [
+    {
+     "id": "a",
+     "label": "Forms b + λc = (−1 + 3λ)i + (2 + λ)j + k",
+     "marks": 0.5,
+     "all": [
+      [
+       "-1 + 3λ",
+       "3λ - 1",
+       "3λ-1"
+      ],
+      [
+       "2 + λ",
+       "λ + 2"
+      ]
+     ],
+     "tip": "Add the components carefully.",
+     "keys": [
+      "(−1+3λ)i + (2+λ)j + k"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Uses the condition: dot product = 0",
+     "marks": 0.5,
+     "all": [
+      [
+       "dot product",
+       "scalar product",
+       "orthogonal",
+       "perpendicular",
+       "(b + λc).a",
+       "a.(b + λc)",
+       "(b+λc)·a"
+      ]
+     ],
+     "tip": "Write the condition (b + λc)·a = 0.",
+     "keys": [
+      "dot product = 0"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Solves: 8λ + 5 = 0 → λ = −5/8",
+     "marks": 1,
+     "all": [
+      [
+       "8λ + 5",
+       "5 + 8λ",
+       "8λ = -5"
+      ],
+      [
+       "-5/8",
+       "-0.625"
+      ]
+     ],
+     "tip": "Show 8λ + 5 = 0 and the final value.",
+     "keys": [
+      "8λ + 5 = 0",
+      "λ = −5/8"
+     ]
+    }
+   ],
+   "model": "b + λc = (−1+3λ)i + (2+λ)j + k. (b+λc)·a = 2(−1+3λ) + 2(2+λ) + 3 = 8λ + 5 = 0, so λ = −5/8.",
+   "mistakes": [
+    "Sign errors while expanding."
+   ],
+   "traps": [],
+   "minWords": 5,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "MAT-02",
+   "subject": "Maths",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Applications of Differentiation",
+   "topic": "Related rates (ladder)",
+   "marks": 3,
+   "part": "Part III (3 marks)",
+   "type": "numerical",
+   "question": "A 5 m ladder leans on a wall. Its foot slides away at 2 m/s. How fast is the top sliding down when the foot is 4 m from the wall?",
+   "items": [
+    {
+     "id": "a",
+     "label": "Relation x² + y² = 25 and y = 3 when x = 4",
+     "marks": 1,
+     "all": [
+      [
+       "x2 + y2 = 25",
+       "x2+y2=25",
+       "x2 + y2 = 5"
+      ],
+      [
+       "y = 3",
+       "y=3",
+       "3 m",
+       "y = √9"
+      ]
+     ],
+     "tip": "Write the relation and find y = 3.",
+     "keys": [
+      "x² + y² = 25",
+      "y = 3"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "Differentiates with respect to t",
+     "marks": 1,
+     "all": [
+      [
+       "2x dx/dt + 2y dy/dt = 0",
+       "x dx/dt + y dy/dt = 0",
+       "x(dx/dt) + y(dy/dt) = 0",
+       "2xdx/dt+2ydy/dt",
+       "differentiat"
+      ]
+     ],
+     "tip": "Differentiate both sides w.r.t. t.",
+     "keys": [
+      "2x dx/dt + 2y dy/dt = 0"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Answer 8/3 m/s (decreasing), with unit",
+     "marks": 1,
+     "all": [
+      [
+       "8/3",
+       "2.67",
+       "2.66"
+      ],
+      [
+       "m/s",
+       "ms-1",
+       "m s-1",
+       "m/sec"
+      ]
+     ],
+     "tip": "Number AND unit; say the height is decreasing.",
+     "keys": [
+      "8/3 m/s",
+      "decreasing"
+     ]
+    }
+   ],
+   "model": "x² + y² = 25; at x = 4, y = 3. 2x(dx/dt) + 2y(dy/dt) = 0 → 4(2) + 3(dy/dt) = 0 → dy/dt = −8/3 m/s. The top slides down at 8/3 m/s.",
+   "mistakes": [
+    "Writing +8/3 (sign wrong).",
+    "Missing unit."
+   ],
+   "traps": [
+    {
+     "any": [
+      "+8/3",
+      "+ 8/3"
+     ],
+     "msg": "The height is DECREASING, so dy/dt is negative (−8/3 m/s)."
+    }
+   ],
+   "minWords": 5,
+   "ordered": false,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "MAT-03",
+   "subject": "Maths",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Applications of Differentiation",
+   "topic": "Maximum volume of an open box",
+   "marks": 4,
+   "part": "Case based (4 marks)",
+   "type": "numerical",
+   "question": "An open box is made from a 40 cm × 25 cm sheet by cutting a square of side x from each corner. (a) Write V(x). (b) Find the critical point. (c) Show it gives the maximum and find the maximum volume.",
+   "items": [
+    {
+     "id": "a",
+     "label": "V(x) = x(40 − 2x)(25 − 2x) = 4x³ − 130x² + 1000x",
+     "marks": 1,
+     "all": [
+      [
+       "x(40 - 2x)(25 - 2x)",
+       "x(25 - 2x)(40 - 2x)",
+       "(40 - 2x)(25 - 2x)x",
+       "4x3 - 130x2 + 1000x",
+       "1000x - 130x2 + 4x3"
+      ]
+     ],
+     "tip": "Write the volume in terms of x.",
+     "keys": [
+      "V = x(40−2x)(25−2x)"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "V′(x) = 12x² − 260x + 1000 = 0 → x = 5 (or 50/3)",
+     "marks": 1,
+     "all": [
+      [
+       "12x2 - 260x + 1000",
+       "3x2 - 65x + 250",
+       "dv/dx"
+      ],
+      [
+       "x = 5",
+       "x=5",
+       "x = 50/3"
+      ]
+     ],
+     "tip": "Differentiate, equate to 0, and solve.",
+     "keys": [
+      "V′(x) = 0",
+      "x = 5"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "Rejects x = 50/3 (x must be less than 12.5)",
+     "marks": 0.5,
+     "all": [
+      [
+       "reject",
+       "neglect",
+       "not possible",
+       "not feasible",
+       "cannot",
+       "12.5",
+       "greater than",
+       "extraneous",
+       "invalid",
+       "ignore",
+       "discard"
+      ]
+     ],
+     "tip": "Say why x = 50/3 is not possible.",
+     "keys": [
+      "reject x = 50/3"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "Second derivative V″ = 24x − 260 = −140 < 0 → maximum",
+     "marks": 1,
+     "all": [
+      [
+       "24x - 260",
+       "d2v/dx2",
+       "24(5) - 260",
+       "-140"
+      ],
+      [
+       "maximum",
+       "max",
+       "<0",
+       "negative",
+       "local max"
+      ]
+     ],
+     "tip": "Show V″ is negative at x = 5.",
+     "keys": [
+      "V″ = 24x − 260",
+      "−140 < 0",
+      "maximum"
+     ]
+    },
+    {
+     "id": "e",
+     "label": "Maximum volume = 2250 cm³",
+     "marks": 0.5,
+     "all": [
+      [
+       "2250"
+      ]
+     ],
+     "tip": "V(5) = 5 × 30 × 15.",
+     "keys": [
+      "2250 cm³"
+     ]
+    }
+   ],
+   "model": "V = 4x³ − 130x² + 1000x. V′ = 12x² − 260x + 1000 = 0 → x = 5 or 50/3 (rejected, x < 12.5). V″(5) = −140 < 0, so maximum. V(5) = 5 × 30 × 15 = 2250 cm³.",
+   "mistakes": [
+    "Not rejecting x = 50/3.",
+    "Not testing with the second derivative."
+   ],
+   "traps": [],
+   "minWords": 12,
+   "ordered": true,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  },
+  {
+   "id": "MAT-04",
+   "subject": "Maths",
+   "board": "Tamil Nadu State Board",
+   "class": 12,
+   "chapter": "Vector Algebra (3D Geometry)",
+   "topic": "Shortest distance between skew lines",
+   "marks": 5,
+   "part": "Part IV (5 marks)",
+   "type": "derive",
+   "question": "Find the shortest distance between the lines r = (−i − j − k) + λ(7i − 6j + k) and r = (3i + 5j + 7k) + μ(i − 2j + k).",
+   "items": [
+    {
+     "id": "a",
+     "label": "a2 − a1 = 4i + 6j + 8k",
+     "marks": 1,
+     "all": [
+      [
+       "4i + 6j + 8k",
+       "(4,6,8)"
+      ],
+      [
+       "a2 - a1",
+       "(a2 - a1)"
+      ]
+     ],
+     "tip": "Write a₂ − a₁ clearly.",
+     "keys": [
+      "a₂ − a₁ = 4i + 6j + 8k"
+     ]
+    },
+    {
+     "id": "b",
+     "label": "b1 × b2 = −4i − 6j − 8k (determinant)",
+     "marks": 1.5,
+     "all": [
+      [
+       "-4i - 6j - 8k",
+       "4i + 6j + 8k"
+      ],
+      [
+       "determinant",
+       "cross product",
+       "b1 x b2",
+       "b1xb2",
+       "i j k"
+      ]
+     ],
+     "tip": "Show the determinant, then the result.",
+     "keys": [
+      "determinant",
+      "b₁ × b₂ = −4i − 6j − 8k"
+     ]
+    },
+    {
+     "id": "c",
+     "label": "|b1 × b2| = √116 = 2√29",
+     "marks": 0.5,
+     "all": [
+      [
+       "√116",
+       "sqrt 116",
+       "√(16 + 36 + 64)",
+       "16 + 36 + 64",
+       "(-4)2 + (-6)2 + (-8)2"
+      ]
+     ],
+     "tip": "Find the magnitude.",
+     "keys": [
+      "√116"
+     ]
+    },
+    {
+     "id": "d",
+     "label": "(a2 − a1)·(b1 × b2) = −116",
+     "marks": 1,
+     "all": [
+      [
+       "-116",
+       "(4)(-4)",
+       "-16 - 36 - 64",
+       "4 x -4"
+      ]
+     ],
+     "tip": "Show the dot product.",
+     "keys": [
+      "−116"
+     ]
+    },
+    {
+     "id": "e",
+     "label": "d = |−116| / √116 = 2√29 units",
+     "marks": 1,
+     "all": [
+      [
+       "d =",
+       "distance",
+       "shortest distance"
+      ],
+      [
+       "2√29",
+       "58/√29",
+       "10.77",
+       "10.8",
+       "√116"
+      ]
+     ],
+     "tip": "Use the formula and box the answer with units.",
+     "keys": [
+      "d = 2√29 units"
+     ]
+    }
+   ],
+   "model": "a₂ − a₁ = 4i + 6j + 8k. b₁ × b₂ = −4i − 6j − 8k, |b₁ × b₂| = √116 = 2√29. (a₂ − a₁)·(b₁ × b₂) = −116. d = |−116| / √116 = 2√29 units.",
+   "mistakes": [
+    "Dropping the modulus bars.",
+    "Forgetting units."
+   ],
+   "traps": [],
+   "minWords": 25,
+   "ordered": true,
+   "verified": false,
+   "verifiedBy": null,
+   "source": "Marking steps from uploaded rubric file (CBSE-style); numbers re-checked by hand. Teacher check pending.",
+   "peerSamples": []
+  }
+ ]
+}

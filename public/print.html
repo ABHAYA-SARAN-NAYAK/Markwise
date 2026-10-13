@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudentSphere - Class 12 Practice Answer Sheet</title>
+    <style>
+      @page {
+        size: A4 portrait;
+        margin: 15mm 18mm 15mm 18mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        color: #000000;
+        background: #FFFFFF;
+        line-height: 1.4;
+      }
+
+      .page-container {
+        max-width: 210mm;
+        margin: 0 auto;
+        padding: 10mm 12mm;
+      }
+
+      .header {
+        border-bottom: 2px solid #000000;
+        padding-bottom: 8px;
+        margin-bottom: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .title {
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+        font-weight: 600;
+        color: #333333;
+      }
+
+      .meta-box {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 16px;
+        border: 1px solid #000000;
+        padding: 10px 14px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .ruled-area {
+        height: 220mm;
+        border: 1px solid #000000;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 31px,
+          #CCCCCC 31px,
+          #CCCCCC 32px
+        );
+        background-position: 0 10px;
+        padding: 10px;
+        position: relative;
+      }
+
+      .margin-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 28mm;
+        width: 1px;
+        background: #EE8888;
+      }
+
+      .footer-notice {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        color: #555555;
+        border-top: 1px dashed #888888;
+        padding-top: 6px;
+      }
+
+      .print-btn-bar {
+        text-align: center;
+        padding: 14px;
+        background: #F3F4F6;
+        border-bottom: 1px solid #D1D5DB;
+        margin-bottom: 12px;
+      }
+
+      .btn-print {
+        background: #122837;
+        color: #FFFFFF;
+        border: none;
+        padding: 10px 24px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      @media print {
+        .print-btn-bar {
+          display: none;
+        }
+        .page-container {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="print-btn-bar">
+      <button class="btn-print" onclick="window.print()">🖨️ Print 40 Practice Sheets (A4)</button>
+      <span style="margin-left: 14px; font-size: 14px; color: #4B5563;">Use browser print setting: Background Graphics checked</span>
+    </div>
+
+    <div class="page-container">
+      <header class="header">
+        <div>
+          <div class="title">StudentSphere · Mark Leak Finder</div>
+          <div class="subtitle">Class 12 Practice Answer Sheet (English Medium)</div>
+        </div>
+        <div style="font-size: 12px; text-align: right; font-weight: 600;">
+          Exhibition Edition<br />14 October 2026
+        </div>
+      </header>
+
+      <div class="meta-box">
+        <div>Question No.: _____________________</div>
+        <div>Subject: _______________</div>
+        <div>Marks: _______</div>
+      </div>
+
+      <div class="ruled-area">
+        <div class="margin-line"></div>
+      </div>
+
+      <footer class="footer-notice">
+        <div>✍️ Write with dark blue or black pen. Keep handwriting straight and clear.</div>
+        <div>🔒 Privacy: Do NOT write your real name or school on this sheet. Photos are not saved.</div>
+      </footer>
+    </div>
+  </body>
+</html>

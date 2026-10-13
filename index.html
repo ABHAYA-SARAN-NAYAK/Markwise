@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudentSphere - Mark Leak Finder</title>
+    <meta name="description" content="Pinpoint mark leaks in Class 12 board exam answers against teacher-style keyword marking keys with handwriting readability analysis." />
+    <meta property="og:title" content="StudentSphere - Mark Leak Finder" />
+    <meta property="og:description" content="Pinpoint mark leaks in Class 12 board exam answers against teacher-style keyword marking keys with handwriting readability analysis." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="top-bar">
+        <a href="#/" class="brand-logo" aria-label="StudentSphere Home">
+          <span class="dot"></span>
+          <span>StudentSphere</span>
+          <span class="brand-badge">Mark Leak Finder</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#/bank">Keyword Bank</a>
+          <a href="#/peer">Peer Marking</a>
+          <a href="#/leaderboard">Comeback Board</a>
+          <a href="#/teacher">Class Map</a>
+          <a href="#/how">How marks are decided</a>
+          <a href="print.html" target="_blank" title="Print blank A4 answer sheets">🖨️ Print Sheets</a>
+          <button id="btn-kiosk-reset" class="btn btn-secondary btn-sm" style="font-size:13px; height:36px; min-height:36px; padding:0 12px; margin-left:8px;" title="Reset for next visitor">
+            👤 Next visitor
+          </button>
+        </nav>
+      </header>
+      <main id="view-content" role="main"></main>
+      <footer class="app-footer">
+        <div>Practice tool. Keys are drafts until a teacher verifies them.</div>
+        <div>Privacy notice: Do not write your name or school on the paper. Photos are not saved.</div>
+      </footer>
+    </div>
+    <script src="js/engine.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/vision.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
