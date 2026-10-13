@@ -22,13 +22,185 @@
     }
   }
 
+  function getCurrentBoard() {
+    return window.Store ? Store.getBoard() : 'CBSE';
+  }
+
+  function cardMatchesBoard(card, board) {
+    board = board || getCurrentBoard();
+    if (card.boards && Array.isArray(card.boards)) {
+      return card.boards.includes(board);
+    }
+    return true;
+  }
+
+  function getCardPart(card, board) {
+    board = board || getCurrentBoard();
+    if (card.partByBoard && card.partByBoard[board]) {
+      return card.partByBoard[board];
+    }
+    if (card.partByBoard) {
+      var k = Object.keys(card.partByBoard);
+      if (k.length > 0) return card.partByBoard[k[0]];
+    }
+    return card.part || card.type || '';
+  }
+
+  function getBoardDisplayName(board) {
+    board = board || getCurrentBoard();
+    return board === 'TN' ? 'Tamil Nadu State Board' : 'CBSE';
+  }
+
+  function renderRevealBlocks(reveal, modelFallback) {
+    if (!reveal || !reveal.blocks || !Array.isArray(reveal.blocks) || reveal.blocks.length === 0) {
+      return `
+        <div class="model-answer-box">
+          <p style="color:#FFFFFF; font-weight:500; font-size:17px; line-height:1.6;">${escapeHtml(modelFallback || '')}</p>
+        </div>
+      `;
+    }
+
+    var blocksHtml = reveal.blocks.map(function (block, idx) {
+      if (block.type === 'steps') {
+        var stepsHtml = (block.items || []).map(function (st, sIdx) {
+          if (typeof st === 'string') {
+            return `
+              <div class="step-card">
+                <div class="step-card-header">Step ${sIdx + 1}</div>
+                <div class="step-work-text">${escapeHtml(st)}</div>
+              </div>
+            `;
+          }
+          var formulaHtml = st.formula ? `<div class="step-formula-code">${escapeHtml(st.formula)}</div>` : '';
+          var workHtml = st.work ? `<div class="step-work-text">${escapeHtml(st.work)}</div>` : '';
+          var resultHtml = st.result ? `<div class="step-result-highlight">→ ${escapeHtml(st.result)}</div>` : '';
+          return `
+            <div class="step-card">
+              <div class="step-card-header">${escapeHtml(st.label || 'Step ' + (sIdx + 1))}</div>
+              ${formulaHtml}
+              ${workHtml}
+              ${resultHtml}
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="reveal-block">
+            <div class="reveal-block-title">📐 ${escapeHtml(block.title || 'Step-by-Step Marking Steps')}</div>
+            <div class="reveal-steps-list">
+              ${stepsHtml}
+            </div>
+          </div>
+        `;
+      }
+
+      if (block.type === 'table') {
+        var headersHtml = (block.headers || []).map(function (h) {
+          return `<th>${escapeHtml(h)}</th>`;
+        }).join('');
+        var rowsHtml = (block.rows || []).map(function (row) {
+          var cellsHtml = row.map(function (c) {
+            return `<td>${escapeHtml(c)}</td>`;
+          }).join('');
+          return `<tr>${cellsHtml}</tr>`;
+        }).join('');
+        var noteHtml = block.note ? `<div class="reveal-table-note">📌 Note: ${escapeHtml(block.note)}</div>` : '';
+
+        return `
+          <div class="reveal-block">
+            <div class="reveal-block-title">📊 ${escapeHtml(block.title || 'Table / Account Presentation')}</div>
+            <div class="reveal-table-wrap">
+              <table class="reveal-table">
+                <thead><tr>${headersHtml}</tr></thead>
+                <tbody>${rowsHtml}</tbody>
+              </table>
+            </div>
+            ${noteHtml}
+          </div>
+        `;
+      }
+
+      if (block.type === 'diagram') {
+        var labelsHtml = (block.labels || []).map(function (lbl) {
+          return `
+            <div class="diagram-label-item">
+              <span class="dot-check">✔</span>
+              <span>${escapeHtml(lbl)}</span>
+            </div>
+          `;
+        }).join('');
+
+        var tipsHtml = (block.drawTips && block.drawTips.length) ? `
+          <div style="margin-top:14px; border-top:1px solid rgba(255,255,255,0.08); padding-top:10px;">
+            <div style="font-size:13px; font-weight:700; color:var(--muted); margin-bottom:4px;">Exam Drawing Tips:</div>
+            <ul class="diagram-tips-list">
+              ${block.drawTips.map(function (t) { return `<li>${escapeHtml(t)}</li>`; }).join('')}
+            </ul>
+          </div>
+        ` : '';
+
+        return `
+          <div class="reveal-block">
+            <div class="reveal-block-title">✏️ ${escapeHtml(block.title || 'Draw and Label Checklist')}</div>
+            <p class="text-small" style="color:var(--muted); margin-bottom:12px;">Examiners award marks for these essential labels:</p>
+            <div class="diagram-labels-grid">
+              ${labelsHtml}
+            </div>
+            ${tipsHtml}
+          </div>
+        `;
+      }
+
+      if (block.type === 'points') {
+        var pointsHtml = (block.items || []).map(function (pt) {
+          return `
+            <div class="reveal-point-item">
+              <span class="bullet-dot">✦</span>
+              <span>${escapeHtml(pt)}</span>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="reveal-block">
+            <div class="reveal-block-title">📝 ${escapeHtml(block.title || 'Key Points (Examiner Criteria)')}</div>
+            <div class="reveal-points-list">
+              ${pointsHtml}
+            </div>
+          </div>
+        `;
+      }
+
+      if (block.type === 'keywords') {
+        var kwsHtml = (block.items || []).map(function (kw) {
+          return `<span class="reveal-kw-badge">${escapeHtml(kw)}</span>`;
+        }).join('');
+
+        return `
+          <div class="reveal-block">
+            <div class="reveal-block-title">🔑 Expected Keywords</div>
+            <div class="reveal-kw-chips">
+              ${kwsHtml}
+            </div>
+          </div>
+        `;
+      }
+
+      return '';
+    }).join('');
+
+    return `<div class="reveal-container">${blocksHtml}</div>`;
+  }
+
   var Views = {
     // ----------------- 1. HOME SCREEN (#/) -----------------
     renderHome: function (container, state) {
       stopActiveCamera();
       var nick = window.Store ? Store.getNick() : '';
+      var board = getCurrentBoard();
       var subjects = ['Physics', 'Chemistry', 'Biology', 'Accountancy', 'Maths'];
-      var cards = (state.keycards && state.keycards.cards) ? state.keycards.cards : [];
+      var allCards = (state.keycards && state.keycards.cards) ? state.keycards.cards : [];
+      var cards = allCards.filter(function (c) { return cardMatchesBoard(c, board); });
 
       var subjectStats = {};
       subjects.forEach(function (sub) {
@@ -56,6 +228,26 @@
 
       container.innerHTML = `
         <div class="view-enter">
+          <!-- Board Selector Banner (Task 1) -->
+          <div class="glass-card" style="padding:16px 22px; margin-bottom:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span style="font-size:22px;">🏛️</span>
+              <div>
+                <strong style="font-size:16px; color:#FFFFFF;">Target Examination Board:</strong>
+                <div style="font-size:14px; color:var(--muted);">Currently showing keycards & section labels for ${escapeHtml(getBoardDisplayName(board))}</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div class="board-switcher" role="group" aria-label="Select board">
+                <button type="button" class="board-toggle-btn ${board === 'CBSE' ? 'active' : ''}" data-board="CBSE">CBSE</button>
+                <button type="button" class="board-toggle-btn ${board === 'TN' ? 'active' : ''}" data-board="TN">Tamil Nadu State Board</button>
+              </div>
+              <a href="#/pattern" class="btn btn-secondary btn-sm" style="font-size:13px; height:36px; min-height:36px; padding:0 14px;">
+                📋 View Exam Pattern
+              </a>
+            </div>
+          </div>
+
           <div style="margin-bottom:36px;">
             <h1 class="hero-title">Find where your marks leak.</h1>
             <p class="hero-sub">Write an answer. We check it with a board-style keyword key and tell you what to fix.</p>
@@ -68,13 +260,55 @@
             </div>
           </div>
 
-          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:20px; flex-wrap:wrap; gap:8px;">
             <h2 class="h2-title" style="margin:0;">Choose a Subject</h2>
-            <span class="text-small">Class 12 · Tamil Nadu State Board</span>
+            <span class="text-small">Class 12 · ${escapeHtml(getBoardDisplayName(board))} (${cards.length} questions available)</span>
           </div>
 
           <div class="grid-3" style="margin-bottom:44px;">
             ${subjectCardsHtml}
+          </div>
+
+          <!-- 3-Minute Exhibition Stage Demo Banner (Task 7) -->
+          <div class="glass-card" style="padding:22px; margin-bottom:36px; border-color:rgba(251, 252, 9, 0.3);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                  <span class="chip chip-demo">Stage Demo</span>
+                  <strong style="font-size:18px; color:#FFFFFF;">3-Minute Exhibition Walkthrough</strong>
+                </div>
+                <p class="text-small" style="color:var(--muted); margin:0;">
+                  Click any sample to evaluate a realistic student answer with saved handwriting transcript. Offline ready, no internet needed!
+                </p>
+              </div>
+            </div>
+            <div class="grid-5" style="gap:12px;">
+              <a href="#/q/PHY-03" class="demo-sample-card">
+                <span class="chip chip-marks" style="margin-bottom:6px;">Physics</span>
+                <div style="font-weight:700; font-size:14px; color:#FFFFFF; margin-bottom:4px;">PHY-03</div>
+                <div class="text-small" style="color:var(--muted);">Missed 'Ω' unit (−0.5m)</div>
+              </a>
+              <a href="#/q/CHE-01" class="demo-sample-card">
+                <span class="chip chip-marks" style="margin-bottom:6px;">Chemistry</span>
+                <div style="font-weight:700; font-size:14px; color:#FFFFFF; margin-bottom:4px;">CHE-01</div>
+                <div class="text-small" style="color:var(--muted);">Missing 's' unit (−0.5m)</div>
+              </a>
+              <a href="#/q/BIO-03" class="demo-sample-card">
+                <span class="chip chip-marks" style="margin-bottom:6px;">Biology</span>
+                <div style="font-weight:700; font-size:14px; color:#FFFFFF; margin-bottom:4px;">BIO-03</div>
+                <div class="text-small" style="color:var(--muted);">Southern blot missed (−1.5m)</div>
+              </a>
+              <a href="#/q/MAT-01" class="demo-sample-card">
+                <span class="chip chip-marks" style="margin-bottom:6px;">Maths</span>
+                <div style="font-weight:700; font-size:14px; color:#FFFFFF; margin-bottom:4px;">MAT-01</div>
+                <div class="text-small" style="color:var(--muted);">Omitted conclusion (−1.5m)</div>
+              </a>
+              <a href="#/q/ACC-01" class="demo-sample-card">
+                <span class="chip chip-marks" style="margin-bottom:6px;">Accountancy</span>
+                <div style="font-weight:700; font-size:14px; color:#FFFFFF; margin-bottom:4px;">ACC-01</div>
+                <div class="text-small" style="color:var(--muted);">1 of 2 rules only (−1.0m)</div>
+              </a>
+            </div>
           </div>
         </div>
       `;
@@ -90,10 +324,11 @@
     // ----------------- 2. SUBJECT LIST SCREEN (#/subject/:name) -----------------
     renderSubject: function (container, subjectName, state, activeMarksFilter) {
       stopActiveCamera();
+      var board = getCurrentBoard();
       activeMarksFilter = activeMarksFilter || 'all';
       var allCards = (state.keycards && state.keycards.cards) ? state.keycards.cards : [];
       var subjectCards = allCards.filter(function (c) {
-        return c.subject.toLowerCase() === subjectName.toLowerCase();
+        return cardMatchesBoard(c, board) && c.subject.toLowerCase() === subjectName.toLowerCase();
       });
 
       var filteredCards = subjectCards;
@@ -113,18 +348,20 @@
           ? `<span class="chip chip-verified">✔ Verified by ${escapeHtml(card.verifiedBy || 'Teacher')}</span>`
           : `<span class="chip chip-draft">Draft key</span>`;
 
+        var partLabel = getCardPart(card, board);
+
         return `
           <a href="#/q/${encodeURIComponent(card.id)}" class="question-card">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; flex-wrap:wrap; gap:8px;">
               <div style="display:flex; align-items:center; gap:10px;">
                 <span style="font-weight:800; font-size:16px; color:var(--accent);">${escapeHtml(card.id)}</span>
                 <span class="chip chip-marks tabular-nums">${card.marks} marks</span>
-                <span class="chip chip-part">${escapeHtml(card.part || card.type)}</span>
+                <span class="chip chip-part">${escapeHtml(partLabel)}</span>
               </div>
               <div>${badgeHtml}</div>
             </div>
             <h3 class="h3-title" style="margin-bottom:6px; font-size:20px;">${escapeHtml(card.topic)}</h3>
-            <p class="text-small" style="color:var(--muted); margin-bottom:10px;">Chapter: ${escapeHtml(card.chapter)}</p>
+            <p class="text-small" style="color:var(--muted); margin-bottom:10px;">Chapter: ${escapeHtml(card.chapter)} · ${escapeHtml(getBoardDisplayName(board))}</p>
             <p style="font-size:17px; color:var(--text); line-height:1.45;">${escapeHtml(card.question)}</p>
           </a>
         `;
@@ -188,6 +425,9 @@
 
       var currentProcessedImage = null; // store current selected photo for read call
 
+      var board = getCurrentBoard();
+      var partLabel = getCardPart(card, board);
+
       container.innerHTML = `
         <div class="view-enter">
           <div style="margin-bottom:20px;">
@@ -202,13 +442,13 @@
                   <div style="display:flex; align-items:center; gap:8px;">
                     <span style="font-weight:800; font-size:18px; color:var(--accent);">${escapeHtml(card.id)}</span>
                     <span class="chip chip-marks tabular-nums">${card.marks} marks</span>
-                    <span class="chip chip-part">${escapeHtml(card.part)}</span>
+                    <span class="chip chip-part">${escapeHtml(partLabel)}</span>
                   </div>
                   <div>${badgeHtml}</div>
                 </div>
 
                 <h2 class="h2-title" style="font-size:24px; margin-bottom:8px;">${escapeHtml(card.topic)}</h2>
-                <p class="text-small" style="color:var(--muted); margin-bottom:18px;">${escapeHtml(card.chapter)} · ${escapeHtml(card.board)} (Class ${card.class})</p>
+                <p class="text-small" style="color:var(--muted); margin-bottom:18px;">${escapeHtml(card.chapter)} · ${escapeHtml(getBoardDisplayName(board))} (Class 12)</p>
 
                 <div style="background:rgba(10, 24, 34, 0.6); border:1px solid var(--stroke); border-radius:14px; padding:20px; margin-bottom:20px;">
                   <p style="font-size:20px; font-weight:600; line-height:1.45; color:#FFFFFF;">${escapeHtml(card.question)}</p>
@@ -219,9 +459,18 @@
                   <div style="font-size:15px; color:var(--text);">Write like an exam: formula → steps → unit → final answer.</div>
                 </div>
 
-                <div style="background:rgba(255, 255, 255, 0.04); border:1px solid var(--stroke); border-radius:12px; padding:14px 18px;">
+                <div style="background:rgba(255, 255, 255, 0.04); border:1px solid var(--stroke); border-radius:12px; padding:14px 18px; margin-bottom:14px;">
                   <div style="font-weight:700; font-size:15px; color:var(--muted); margin-bottom:4px;">✍️ Handwriting Tip</div>
                   <div style="font-size:15px; color:var(--text);">Write with a dark pen on white paper. Keep the page flat and fill the camera frame.</div>
+                </div>
+
+                <div>
+                  <button type="button" id="btn-toggle-q-model" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center;">
+                    👁️ Reveal Structured Model Answer
+                  </button>
+                  <div id="q-model-answer-container" style="display:none; margin-top:14px; background:rgba(10, 24, 34, 0.7); border:1px solid var(--stroke); border-radius:14px; padding:18px;">
+                    ${renderRevealBlocks(card.reveal, card.model)}
+                  </div>
                 </div>
               </div>
             </div>
@@ -245,8 +494,11 @@
 
                   <textarea id="answer-text" placeholder="Type your answer here exactly as you would write on your exam paper..."></textarea>
 
-                  <div style="margin-top:20px;">
-                    <button id="btn-check-answer" class="btn btn-primary" style="width:100%;">Check my answer →</button>
+                  <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                    <button id="btn-check-answer" class="btn btn-primary" style="flex:2; min-width:180px;">Check my answer →</button>
+                    <button type="button" id="btn-demo-sample-type" class="btn btn-secondary btn-sm" style="flex:1; min-width:150px; font-size:13px;" title="Insert a realistic student answer that loses marks">
+                      ⚡ Demo Answer
+                    </button>
                   </div>
                 </div>
 
@@ -392,6 +644,44 @@
           };
 
           window.location.hash = '#/result';
+        });
+      }
+
+      // Demo Answer Fill in Type Mode (Task 7)
+      var demoTypeBtn = document.getElementById('btn-demo-sample-type');
+      if (demoTypeBtn && textarea && checkBtn) {
+        demoTypeBtn.addEventListener('click', function () {
+          fetch('demo/reads.json')
+            .then(function (r) { return r.json(); })
+            .then(function (demoData) {
+              var samples = demoData.samples || [];
+              var matched = samples.find(function (s) { return s.cardId === card.id; }) ||
+                            samples.find(function (s) { return s.subject.toLowerCase() === card.subject.toLowerCase(); }) ||
+                            samples[0];
+              if (matched && matched.readResult && matched.readResult.transcript) {
+                textarea.value = matched.readResult.transcript.replace(/\[\?\]/g, '...');
+                if (liveCount) {
+                  var wc = textarea.value.trim().split(/\s+/).filter(Boolean).length;
+                  liveCount.textContent = wc + ' words';
+                }
+                checkBtn.click();
+              }
+            })
+            .catch(function () {
+              textarea.value = card.model.slice(0, Math.floor(card.model.length * 0.6));
+              checkBtn.click();
+            });
+        });
+      }
+
+      // Toggle Question Model Answer (Task 3)
+      var toggleQModelBtn = document.getElementById('btn-toggle-q-model');
+      var qModelContainer = document.getElementById('q-model-answer-container');
+      if (toggleQModelBtn && qModelContainer) {
+        toggleQModelBtn.addEventListener('click', function () {
+          var isHidden = qModelContainer.style.display === 'none';
+          qModelContainer.style.display = isHidden ? 'block' : 'none';
+          toggleQModelBtn.textContent = isHidden ? '🙈 Hide Model Answer' : '👁️ Reveal Structured Model Answer';
         });
       }
 
@@ -1052,6 +1342,7 @@
               <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
                 <span style="font-weight:800; font-size:16px; color:var(--accent);">${escapeHtml(card.id)}</span>
                 <span class="chip chip-marks tabular-nums">${card.marks} marks</span>
+                <span class="chip chip-part">${escapeHtml(getCardPart(card, getCurrentBoard()))}</span>
                 ${badgeHtml}
               </div>
               <h1 class="hero-title" style="font-size:32px; margin:0;">${escapeHtml(card.topic)}</h1>
@@ -1147,12 +1438,12 @@
             </div>
 
             <div id="model-answer-container" style="display:none;">
-              <div class="model-answer-box">
-                <p style="color:#FFFFFF; font-weight:500;">${escapeHtml(card.model)}</p>
+              <div class="model-answer-box" style="background:rgba(10,24,34,0.6); padding:20px; border-radius:14px;">
+                ${renderRevealBlocks(card.reveal, card.model)}
                 ${(card.mistakes && card.mistakes.length) ? `
-                  <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.1);">
-                    <div style="font-weight:700; font-size:14px; color:var(--warn); margin-bottom:4px;">Common Student Mistakes:</div>
-                    <ul style="padding-left:20px; font-size:15px; color:var(--muted);">
+                  <div style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1);">
+                    <div style="font-weight:700; font-size:15px; color:var(--warn); margin-bottom:6px;">⚠️ Common Student Mistakes:</div>
+                    <ul style="padding-left:20px; font-size:15px; color:var(--text); line-height:1.5;">
                       ${card.mistakes.map(function (m) { return `<li>${escapeHtml(m)}</li>`; }).join('')}
                     </ul>
                   </div>
@@ -1298,9 +1589,11 @@
         var pendingSuggestions = suggestions.filter(function (s) { return s.status === 'pending'; });
         var overrides = window.Store ? Store.getOverrides() : {};
 
-        // Flatten all items across cards
+        var board = getCurrentBoard();
+        // Flatten all items across cards for current board
         var allItems = [];
         allCards.forEach(function (c) {
+          if (!cardMatchesBoard(c, board)) return;
           if (activeSubject !== 'all' && c.subject.toLowerCase() !== activeSubject.toLowerCase()) return;
           c.items.forEach(function (item) {
             var approvedExtra = (overrides[c.id] && overrides[c.id][item.id]) ? overrides[c.id][item.id] : [];
@@ -1597,7 +1890,12 @@
       }
 
       // Teacher Mode Authenticated: Render Class Map
-      var attempts = window.Store ? Store.getAttempts() : [];
+      var board = getCurrentBoard();
+      var boardCards = allCards.filter(function (c) { return cardMatchesBoard(c, board); });
+      var boardCardIds = {};
+      boardCards.forEach(function (c) { boardCardIds[c.id] = true; });
+      var allAttempts = window.Store ? Store.getAttempts() : [];
+      var attempts = allAttempts.filter(function (att) { return boardCardIds[att.cardId]; });
       var totalAttempts = attempts.length;
 
       var totalScore = 0;
@@ -1836,10 +2134,11 @@
     // ----------------- 9. PEER MARKING SCREEN (#/peer) -----------------
     renderPeer: function (container, state) {
       stopActiveCamera();
+      var board = getCurrentBoard();
       var allCards = (state.keycards && state.keycards.cards) ? state.keycards.cards : [];
-      // Find cards with peerSamples
+      // Find cards for current board with peerSamples
       var cardsWithSamples = allCards.filter(function (c) {
-        return c.peerSamples && c.peerSamples.length > 0;
+        return cardMatchesBoard(c, board) && c.peerSamples && c.peerSamples.length > 0;
       });
 
       if (!cardsWithSamples.length) {
@@ -2036,8 +2335,13 @@
     // ----------------- 10. LEADERBOARD: BIGGEST COMEBACK (#/leaderboard) -----------------
     renderLeaderboard: function (container, state) {
       stopActiveCamera();
-      var attempts = window.Store ? Store.getAttempts() : [];
+      var board = getCurrentBoard();
       var allCards = (state.keycards && state.keycards.cards) ? state.keycards.cards : [];
+      var boardCards = allCards.filter(function (c) { return cardMatchesBoard(c, board); });
+      var boardCardIds = {};
+      boardCards.forEach(function (c) { boardCardIds[c.id] = true; });
+      var allAttempts = window.Store ? Store.getAttempts() : [];
+      var attempts = allAttempts.filter(function (att) { return boardCardIds[att.cardId]; });
       var activeTab = 'comeback'; // 'comeback' | 'kept'
 
       function draw() {
@@ -2222,6 +2526,386 @@
             if (btn) {
               activeTab = btn.getAttribute('data-tab');
               draw();
+            }
+          });
+        }
+      }
+
+      draw();
+    },
+
+    // ----------------- 11. EXAM PATTERN SCREEN (#/pattern) -----------------
+    renderPattern: function (container, state) {
+      stopActiveCamera();
+      var currentBoard = getCurrentBoard();
+
+      function draw() {
+        var isCBSE = (currentBoard === 'CBSE');
+
+        var cbseHtml = `
+          <!-- CBSE Class 12 Pattern -->
+          <div style="margin-bottom:32px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+              <div>
+                <h2 class="h2-title" style="margin:0;">CBSE Class 12 Examination Pattern</h2>
+                <span class="text-small" style="color:var(--muted);">Theory Paper: 3 Hours · Conducted by Central Board of Secondary Education</span>
+              </div>
+              <span class="pattern-score-pill">CBSE Standard Scheme</span>
+            </div>
+
+            <!-- Subject Cards -->
+            <div class="pattern-subject-grid">
+              <!-- Physics / Chemistry / Biology -->
+              <div class="glass-card">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                  <h3 class="h3-title" style="margin:0; font-size:22px;">Physics, Chemistry & Biology</h3>
+                  <span class="chip chip-marks">70 Marks Theory + 30 Marks Practical · 33 Questions</span>
+                </div>
+                <div class="reveal-table-wrap">
+                  <table class="reveal-table">
+                    <thead>
+                      <tr>
+                        <th>Section</th>
+                        <th>Question Numbers</th>
+                        <th>Type of Questions</th>
+                        <th>Marks / Question</th>
+                        <th>Total Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Section A</strong></td>
+                        <td>Q1 to Q16 (16 Qs)</td>
+                        <td>Multiple Choice (MCQ) & Assertion-Reasoning</td>
+                        <td>1 mark</td>
+                        <td><strong>16 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section B</strong></td>
+                        <td>Q17 to Q21 (5 Qs)</td>
+                        <td>Very Short Answer (VSA) - definitions, laws, 2-step calculations</td>
+                        <td>2 marks</td>
+                        <td><strong>10 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section C</strong></td>
+                        <td>Q22 to Q28 (7 Qs)</td>
+                        <td>Short Answer (SA) - derivations, reactions, numericals</td>
+                        <td>3 marks</td>
+                        <td><strong>21 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section D</strong></td>
+                        <td>Q29 to Q30 (2 Qs)</td>
+                        <td>Case-Based / Data-Linked (with internal choice in sub-parts)</td>
+                        <td>4 marks</td>
+                        <td><strong>8 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section E</strong></td>
+                        <td>Q31 to Q33 (3 Qs)</td>
+                        <td>Long Answer (LA) - major derivations / long problems (internal choice in all)</td>
+                        <td>5 marks</td>
+                        <td><strong>15 marks</strong></td>
+                      </tr>
+                      <tr style="background:rgba(251,252,9,0.06); font-weight:700;">
+                        <td colspan="4">Total Theory Marks (3 Hours)</td>
+                        <td><span style="color:var(--accent);">70 Marks</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Mathematics -->
+              <div class="glass-card">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                  <h3 class="h3-title" style="margin:0; font-size:22px;">Mathematics</h3>
+                  <span class="chip chip-marks">80 Marks Theory + 20 Marks Internal · 38 Questions</span>
+                </div>
+                <div class="reveal-table-wrap">
+                  <table class="reveal-table">
+                    <thead>
+                      <tr>
+                        <th>Section</th>
+                        <th>Question Numbers</th>
+                        <th>Type of Questions</th>
+                        <th>Marks / Question</th>
+                        <th>Total Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Section A</strong></td>
+                        <td>Q1 to Q20 (20 Qs)</td>
+                        <td>18 Multiple Choice + 2 Assertion-Reasoning</td>
+                        <td>1 mark</td>
+                        <td><strong>20 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section B</strong></td>
+                        <td>Q21 to Q25 (5 Qs)</td>
+                        <td>Very Short Answer (VSA)</td>
+                        <td>2 marks</td>
+                        <td><strong>10 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section C</strong></td>
+                        <td>Q26 to Q31 (6 Qs)</td>
+                        <td>Short Answer (SA)</td>
+                        <td>3 marks</td>
+                        <td><strong>18 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section D</strong></td>
+                        <td>Q32 to Q35 (4 Qs)</td>
+                        <td>Long Answer (LA) with internal choice</td>
+                        <td>5 marks</td>
+                        <td><strong>20 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Section E</strong></td>
+                        <td>Q36 to Q38 (3 Qs)</td>
+                        <td>Case-Based / Integrated Context Questions (3 sub-parts: 1+1+2)</td>
+                        <td>4 marks</td>
+                        <td><strong>12 marks</strong></td>
+                      </tr>
+                      <tr style="background:rgba(251,252,9,0.06); font-weight:700;">
+                        <td colspan="4">Total Theory Marks (3 Hours)</td>
+                        <td><span style="color:var(--accent);">80 Marks</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Accountancy -->
+              <div class="glass-card">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                  <h3 class="h3-title" style="margin:0; font-size:22px;">Accountancy</h3>
+                  <span class="chip chip-marks">80 Marks Theory + 20 Marks Project · 34 Questions</span>
+                </div>
+                <div class="reveal-table-wrap">
+                  <table class="reveal-table">
+                    <thead>
+                      <tr>
+                        <th>Part</th>
+                        <th>Topics Covered</th>
+                        <th>Question Distribution</th>
+                        <th>Total Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Part A</strong></td>
+                        <td>Accounting for Partnership Firms and Companies</td>
+                        <td>Mix of 1-mark (16 Qs), 3-mark (4 Qs), 4-mark (2 Qs), 6-mark (4 Qs)</td>
+                        <td><strong>60 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part B</strong></td>
+                        <td>Financial Statement Analysis (or Computerised Accounting)</td>
+                        <td>Mix of 1-mark (4 Qs), 3-mark (2 Qs), 4-mark (1 Q), 6-mark (1 Q)</td>
+                        <td><strong>20 marks</strong></td>
+                      </tr>
+                      <tr style="background:rgba(251,252,9,0.06); font-weight:700;">
+                        <td colspan="3">Total Theory Paper (3 Hours)</td>
+                        <td><span style="color:var(--accent);">80 Marks</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- CBSE Valuator Tips -->
+            <div class="pattern-tip-card" style="margin-top:24px;">
+              <h3 class="h3-title" style="color:#93C5FD; font-size:19px; margin-bottom:10px;">💡 How CBSE Valuators Award Marks</h3>
+              <ul style="padding-left:22px; font-size:16px; line-height:1.6; color:var(--text);">
+                <li><strong>Write formula first:</strong> In numericals, 0.5 to 1.0 mark is specifically reserved for the initial formula before numerical substitution.</li>
+                <li><strong>SI Units on final answers:</strong> Omitting the final unit (e.g. Ω, s, V, K, mol/L) causes an automatic 0.5-mark loss even if arithmetic is correct.</li>
+                <li><strong>Labelled NCERT diagrams:</strong> Ray diagrams, circuits, and biological illustrations must include pencil lead lines and standard NCERT labels.</li>
+                <li><strong>Keywords from NCERT:</strong> Board evaluators grade against a keyword key. Use precise scientific and accounting terms (e.g., "opposes change in magnetic flux", "d2sp3", "co-dominance").</li>
+                <li><strong>Working notes in Accountancy:</strong> Working notes carry dedicated marks in ledger accounts, forfeiture, and ratio calculations.</li>
+              </ul>
+            </div>
+          </div>
+        `;
+
+        var tnHtml = `
+          <!-- Tamil Nadu State Board Class 12 Pattern -->
+          <div style="margin-bottom:32px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+              <div>
+                <h2 class="h2-title" style="margin:0;">Tamil Nadu State Board Class 12 Examination Pattern</h2>
+                <span class="text-small" style="color:var(--muted);">Theory Paper: 3 Hours · Directorate of Government Examinations (DGE TN)</span>
+              </div>
+              <span class="pattern-score-pill">TN DGE Standard Scheme</span>
+            </div>
+
+            <!-- Subject Cards -->
+            <div class="pattern-subject-grid">
+              <!-- Science Stream -->
+              <div class="glass-card">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                  <h3 class="h3-title" style="margin:0; font-size:22px;">Physics, Chemistry & Biology</h3>
+                  <span class="chip chip-marks">70 Marks Theory + 30 Marks Practical/Internal</span>
+                </div>
+                <div class="reveal-table-wrap">
+                  <table class="reveal-table">
+                    <thead>
+                      <tr>
+                        <th>Part</th>
+                        <th>Number of Questions</th>
+                        <th>Nature of Section</th>
+                        <th>Marks / Question</th>
+                        <th>Total Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Part I</strong></td>
+                        <td>Answer all 15 questions</td>
+                        <td>Multiple Choice Questions (Objective)</td>
+                        <td>1 mark</td>
+                        <td><strong>15 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part II</strong></td>
+                        <td>Answer 6 out of 9 questions</td>
+                        <td>Very Short Answer (Question 24 is compulsory numerical)</td>
+                        <td>2 marks</td>
+                        <td><strong>12 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part III</strong></td>
+                        <td>Answer 6 out of 9 questions</td>
+                        <td>Short Answer (Question 33 is compulsory)</td>
+                        <td>3 marks</td>
+                        <td><strong>18 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part IV</strong></td>
+                        <td>Answer all 5 questions (Either / Or choice)</td>
+                        <td>Long Answer Derivations / Comprehensive Problems</td>
+                        <td>5 marks</td>
+                        <td><strong>25 marks</strong></td>
+                      </tr>
+                      <tr style="background:rgba(251,252,9,0.06); font-weight:700;">
+                        <td colspan="4">Total Theory Marks (3 Hours)</td>
+                        <td><span style="color:var(--accent);">70 Marks</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Maths & Accountancy -->
+              <div class="glass-card">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                  <h3 class="h3-title" style="margin:0; font-size:22px;">Mathematics & Accountancy</h3>
+                  <span class="chip chip-marks">90 Marks Theory + 10 Marks Internal Assessment</span>
+                </div>
+                <div class="reveal-table-wrap">
+                  <table class="reveal-table">
+                    <thead>
+                      <tr>
+                        <th>Part</th>
+                        <th>Number of Questions</th>
+                        <th>Nature of Section</th>
+                        <th>Marks / Question</th>
+                        <th>Total Marks</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Part I</strong></td>
+                        <td>Answer all 20 questions</td>
+                        <td>Multiple Choice Questions (MCQs)</td>
+                        <td>1 mark</td>
+                        <td><strong>20 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part II</strong></td>
+                        <td>Answer 7 out of 10 questions</td>
+                        <td>Very Short Answer (One compulsory question)</td>
+                        <td>2 marks</td>
+                        <td><strong>14 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part III</strong></td>
+                        <td>Answer 7 out of 10 questions</td>
+                        <td>Short Answer (One compulsory question)</td>
+                        <td>3 marks</td>
+                        <td><strong>21 marks</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part IV</strong></td>
+                        <td>Answer all 7 questions (Either / Or choice)</td>
+                        <td>Long Answer / Full Analytical Problems</td>
+                        <td>5 marks</td>
+                        <td><strong>35 marks</strong></td>
+                      </tr>
+                      <tr style="background:rgba(251,252,9,0.06); font-weight:700;">
+                        <td colspan="4">Total Theory Marks (3 Hours)</td>
+                        <td><span style="color:var(--accent);">90 Marks</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- TN State Board Valuator Tips -->
+            <div class="pattern-tip-card" style="margin-top:24px;">
+              <h3 class="h3-title" style="color:#93C5FD; font-size:19px; margin-bottom:10px;">💡 How Tamil Nadu State Board Valuators Award Marks</h3>
+              <ul style="padding-left:22px; font-size:16px; line-height:1.6; color:var(--text);">
+                <li><strong>Compulsory Questions:</strong> Question 24 (Part II) and Question 33 (Part III) cannot be omitted. Practice state board textbook numericals thoroughly.</li>
+                <li><strong>Part IV Full Derivation Steps:</strong> 5-mark questions require the complete mathematical derivation with step-by-step intermediate lines and neat labelled diagrams.</li>
+                <li><strong>Formula and State Board Symbols:</strong> Use standard Samacheer Kalvi notation and state the law / principle verbatim.</li>
+                <li><strong>Neatness:</strong> Maintain clean ruled formatting, tabular ledger presentation in Accountancy, and clear final boxed answers.</li>
+              </ul>
+            </div>
+          </div>
+        `;
+
+        container.innerHTML = `
+          <div class="view-enter">
+            <!-- Header Bar with Board Toggle -->
+            <div style="margin-bottom:24px;">
+              <a href="#/" class="btn btn-secondary btn-sm" style="margin-bottom:16px;">← Back to Home</a>
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                <div>
+                  <h1 class="hero-title" style="margin:0; font-size:36px;">Exam Pattern & Blueprint</h1>
+                  <p class="text-muted" style="margin-top:4px;">Official question distribution, mark schemes, and valuator tips</p>
+                </div>
+                <div class="board-switcher" id="pattern-board-switcher" role="group" aria-label="Switch Board">
+                  <button type="button" class="board-toggle-btn ${isCBSE ? 'active' : ''}" data-board="CBSE">CBSE</button>
+                  <button type="button" class="board-toggle-btn ${!isCBSE ? 'active' : ''}" data-board="TN">Tamil Nadu State Board</button>
+                </div>
+              </div>
+            </div>
+
+            ${isCBSE ? cbseHtml : tnHtml}
+
+            <!-- Official Notice Footer -->
+            <div class="pattern-official-notice">
+              * Note: Pattern and section structure are based on current board guidelines. Please verify against the latest official sample paper issued by CBSE or DGE Tamil Nadu for the current academic session.
+            </div>
+          </div>
+        `;
+
+        var switcher = document.getElementById('pattern-board-switcher');
+        if (switcher) {
+          switcher.addEventListener('click', function (e) {
+            var btn = e.target.closest('.board-toggle-btn');
+            if (btn) {
+              var newBoard = btn.getAttribute('data-board');
+              if (newBoard && window.Store) {
+                Store.setBoard(newBoard);
+                currentBoard = newBoard;
+                draw();
+              }
             }
           });
         }

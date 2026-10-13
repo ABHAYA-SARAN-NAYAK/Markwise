@@ -1,34 +1,11 @@
 {
  "samples": [
   {
-   "id": "sample-phy-01",
-   "cardId": "PHY-01",
-   "subject": "Physics",
-   "title": "PHY-01: Lenz's Law (Clear Hand)",
-   "note": "Clean handwriting with 1 unreadable symbol",
-   "dataUrl": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23FDFCF8'/><line x1='60' y1='0' x2='60' y2='400' stroke='%23FFB0B7' stroke-width='2'/><line x1='0' y1='100' x2='800' y2='100' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='160' x2='800' y2='160' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='220' x2='800' y2='220' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='280' x2='800' y2='280' stroke='%23E2E8F0' stroke-width='1'/><text x='80' y='90' font-family='cursive, serif' font-size='26' fill='%23112244'>Lenz's Law:</text><text x='80' y='150' font-family='cursive, serif' font-size='24' fill='%23112244'>The direction of the induced current opposes</text><text x='80' y='210' font-family='cursive, serif' font-size='24' fill='%23112244'>the change in magnetic flux that produces it.</text><text x='80' y='270' font-family='cursive, serif' font-size='24' fill='%23112244'>e = - dPhi / dt</text></svg>",
-   "readResult": {
-    "photo_ok": true,
-    "photo_problems": [],
-    "transcript": "Lenz's Law:\nThe direction of the induced current opposes the change in magnetic flux that produces it.\ne = - [?] / dt",
-    "has_diagram": false,
-    "diagram_labels": [],
-    "writing": {
-     "word_spacing": "good",
-     "line_direction": "straight",
-     "letter_size": "medium",
-     "overwriting": "none",
-     "confusable_characters": [],
-     "units_or_symbols_unclear": false
-    }
-   }
-  },
-  {
    "id": "sample-phy-03",
    "cardId": "PHY-03",
    "subject": "Physics",
-   "title": "PHY-03: Internal Resistance (Numerical with missing unit)",
-   "note": "Fast handwriting, tight spacing, missed unit",
+   "title": "Physics: Internal Resistance Numerical",
+   "note": "Fast handwriting, missing unit 'Ω' on final answer (loses 0.5-1 mark)",
    "dataUrl": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23FDFCF8'/><line x1='60' y1='0' x2='60' y2='400' stroke='%23FFB0B7' stroke-width='2'/><line x1='0' y1='100' x2='800' y2='100' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='160' x2='800' y2='160' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='220' x2='800' y2='220' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='280' x2='800' y2='280' stroke='%23E2E8F0' stroke-width='1'/><text x='80' y='90' font-family='cursive, serif' font-size='24' fill='%23112244'>E = I(R + r)</text><text x='80' y='150' font-family='cursive, serif' font-size='24' fill='%23112244'>0.9(2 + r) = 0.3(7 + r)</text><text x='80' y='210' font-family='cursive, serif' font-size='24' fill='%23112244'>1.8 + 0.9r = 2.1 + 0.3r</text><text x='80' y='270' font-family='cursive, serif' font-size='24' fill='%23112244'>0.6r = 0.3  ->  r = 0.5</text></svg>",
    "readResult": {
     "photo_ok": true,
@@ -50,13 +27,82 @@
    "id": "sample-che-01",
    "cardId": "CHE-01",
    "subject": "Chemistry",
-   "title": "CHE-01: First Order Half-Life (3 Marks)",
-   "note": "Full textbook derivation with unit",
-   "dataUrl": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23FDFCF8'/><line x1='60' y1='0' x2='60' y2='400' stroke='%23FFB0B7' stroke-width='2'/><line x1='0' y1='100' x2='800' y2='100' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='160' x2='800' y2='160' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='220' x2='800' y2='220' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='280' x2='800' y2='280' stroke='%23E2E8F0' stroke-width='1'/><text x='80' y='90' font-family='cursive, serif' font-size='24' fill='%23112244'>First order reaction half-life:</text><text x='80' y='150' font-family='cursive, serif' font-size='24' fill='%23112244'>t1/2 = 0.693 / k</text><text x='80' y='210' font-family='cursive, serif' font-size='24' fill='%23112244'>t1/2 = 0.693 / (1.54 x 10-3 s-1)</text><text x='80' y='270' font-family='cursive, serif' font-size='24' fill='%23112244'>t1/2 = 450 s</text></svg>",
+   "title": "Chemistry: First Order Half-Life",
+   "note": "Calculates 450 but misses unit 's' and integrated rate formula (loses 1 mark)",
+   "dataUrl": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23FDFCF8'/><line x1='60' y1='0' x2='60' y2='400' stroke='%23FFB0B7' stroke-width='2'/><line x1='0' y1='100' x2='800' y2='100' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='160' x2='800' y2='160' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='220' x2='800' y2='220' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='280' x2='800' y2='280' stroke='%23E2E8F0' stroke-width='1'/><text x='80' y='90' font-family='cursive, serif' font-size='24' fill='%23112244'>First order reaction half life:</text><text x='80' y='150' font-family='cursive, serif' font-size='24' fill='%23112244'>t1/2 = 0.693 / k</text><text x='80' y='210' font-family='cursive, serif' font-size='24' fill='%23112244'>t1/2 = 0.693 / (1.54 x 10-3)</text><text x='80' y='270' font-family='cursive, serif' font-size='24' fill='%23112244'>t1/2 = 450</text></svg>",
    "readResult": {
     "photo_ok": true,
     "photo_problems": [],
-    "transcript": "First order reaction half-life:\nt1/2 = 0.693 / k\nt1/2 = 0.693 / (1.54 x 10-3 s-1)\nt1/2 = 450 s",
+    "transcript": "First order reaction half life:\nt1/2 = 0.693 / k\nt1/2 = 0.693 / (1.54 x 10-3)\nt1/2 = 450",
+    "has_diagram": false,
+    "diagram_labels": [],
+    "writing": {
+     "word_spacing": "good",
+     "line_direction": "straight",
+     "letter_size": "medium",
+     "overwriting": "none",
+     "confusable_characters": [],
+     "units_or_symbols_unclear": true
+    }
+   }
+  },
+  {
+   "id": "sample-bio-03",
+   "cardId": "BIO-03",
+   "subject": "Biology",
+   "title": "Biology: DNA Fingerprinting Steps",
+   "note": "Mentions digestion and electrophoresis, misses Southern blotting and VNTR probe (loses 1.5 marks)",
+   "dataUrl": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23FDFCF8'/><line x1='60' y1='0' x2='60' y2='400' stroke='%23FFB0B7' stroke-width='2'/><line x1='0' y1='100' x2='800' y2='100' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='160' x2='800' y2='160' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='220' x2='800' y2='220' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='280' x2='800' y2='280' stroke='%23E2E8F0' stroke-width='1'/><text x='80' y='90' font-family='cursive, serif' font-size='22' fill='%23112244'>DNA fingerprinting steps:</text><text x='80' y='140' font-family='cursive, serif' font-size='20' fill='%23112244'>1. Isolation of DNA from cells</text><text x='80' y='190' font-family='cursive, serif' font-size='20' fill='%23112244'>2. Digestion of DNA by restriction endonucleases</text><text x='80' y='240' font-family='cursive, serif' font-size='20' fill='%23112244'>3. Separation of fragments by agarose gel electrophoresis</text><text x='80' y='290' font-family='cursive, serif' font-size='20' fill='%23112244'>4. Detection on X-ray film</text></svg>",
+   "readResult": {
+    "photo_ok": true,
+    "photo_problems": [],
+    "transcript": "DNA fingerprinting steps:\n1. Isolation of DNA from cells\n2. Digestion of DNA by restriction endonucleases\n3. Separation of fragments by agarose gel electrophoresis\n4. Detection on X-ray film",
+    "has_diagram": false,
+    "diagram_labels": [],
+    "writing": {
+     "word_spacing": "good",
+     "line_direction": "straight",
+     "letter_size": "medium",
+     "overwriting": "none",
+     "confusable_characters": [],
+     "units_or_symbols_unclear": false
+    }
+   }
+  },
+  {
+   "id": "sample-mat-01",
+   "cardId": "MAT-01",
+   "subject": "Maths",
+   "title": "Maths: Orthogonal Vectors",
+   "note": "Evaluates dot product = 0, but omits conclusion stating vectors are orthogonal (loses 1 mark)",
+   "dataUrl": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23FDFCF8'/><line x1='60' y1='0' x2='60' y2='400' stroke='%23FFB0B7' stroke-width='2'/><line x1='0' y1='100' x2='800' y2='100' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='160' x2='800' y2='160' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='220' x2='800' y2='220' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='280' x2='800' y2='280' stroke='%23E2E8F0' stroke-width='1'/><text x='80' y='90' font-family='cursive, serif' font-size='24' fill='%23112244'>Dot product calculation:</text><text x='80' y='150' font-family='cursive, serif' font-size='24' fill='%23112244'>a . b = a1 b1 + a2 b2 + a3 b3</text><text x='80' y='210' font-family='cursive, serif' font-size='24' fill='%23112244'>= 2(3) + (-1)(2) + 4(-1)</text><text x='80' y='270' font-family='cursive, serif' font-size='24' fill='%23112244'>= 6 - 2 - 4 = 0</text></svg>",
+   "readResult": {
+    "photo_ok": true,
+    "photo_problems": [],
+    "transcript": "Dot product calculation:\na . b = a1 b1 + a2 b2 + a3 b3\n= 2(3) + (-1)(2) + 4(-1)\n= 6 - 2 - 4 = 0",
+    "has_diagram": false,
+    "diagram_labels": [],
+    "writing": {
+     "word_spacing": "good",
+     "line_direction": "straight",
+     "letter_size": "medium",
+     "overwriting": "none",
+     "confusable_characters": [],
+     "units_or_symbols_unclear": false
+    }
+   }
+  },
+  {
+   "id": "sample-acc-01",
+   "cardId": "ACC-01",
+   "subject": "Accountancy",
+   "title": "Accountancy: Rules without Partnership Deed",
+   "note": "Only mentions equal profits; misses interest on loan, capital, or drawings (loses 1 mark)",
+   "dataUrl": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='400' viewBox='0 0 800 400'><rect width='800' height='400' fill='%23FDFCF8'/><line x1='60' y1='0' x2='60' y2='400' stroke='%23FFB0B7' stroke-width='2'/><line x1='0' y1='100' x2='800' y2='100' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='160' x2='800' y2='160' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='220' x2='800' y2='220' stroke='%23E2E8F0' stroke-width='1'/><line x1='0' y1='280' x2='800' y2='280' stroke='%23E2E8F0' stroke-width='1'/><text x='80' y='90' font-family='cursive, serif' font-size='24' fill='%23112244'>Absence of Partnership Deed:</text><text x='80' y='160' font-family='cursive, serif' font-size='22' fill='%23112244'>Under the Indian Partnership Act 1932,</text><text x='80' y='220' font-family='cursive, serif' font-size='22' fill='%23112244'>all profits and losses are shared equally</text><text x='80' y='280' font-family='cursive, serif' font-size='22' fill='%23112244'>among the partners.</text></svg>",
+   "readResult": {
+    "photo_ok": true,
+    "photo_problems": [],
+    "transcript": "Absence of Partnership Deed:\nUnder the Indian Partnership Act 1932, all profits and losses are shared equally among the partners.",
     "has_diagram": false,
     "diagram_labels": [],
     "writing": {

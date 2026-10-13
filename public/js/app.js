@@ -72,13 +72,45 @@
       Views.renderPeer(contentEl, state);
     } else if (hash === '#/leaderboard') {
       Views.renderLeaderboard(contentEl, state);
+    } else if (hash === '#/pattern') {
+      Views.renderPattern(contentEl, state);
     } else {
       Views.renderHome(contentEl, state);
     }
 
+    updateBoardSwitcher();
+
     // Scroll to top on route change
     window.scrollTo(0, 0);
   }
+
+  function updateBoardSwitcher() {
+    var currentBoard = window.Store ? Store.getBoard() : 'CBSE';
+    var btns = document.querySelectorAll('.board-toggle-btn');
+    btns.forEach(function (btn) {
+      var b = btn.getAttribute('data-board');
+      if (b === currentBoard) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    });
+  }
+
+  // Board switch click listener (Top Bar & Home)
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.board-toggle-btn');
+    if (btn) {
+      var board = btn.getAttribute('data-board');
+      if (board && window.Store) {
+        Store.setBoard(board);
+        updateBoardSwitcher();
+        route();
+      }
+    }
+  });
 
   // Kiosk Mode: 90 seconds idle timer (PRD Section 4.5, 9.5)
   var idleTimer = null;

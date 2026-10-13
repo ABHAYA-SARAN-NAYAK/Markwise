@@ -33,6 +33,15 @@
     setNick: function (nick) {
       setItem('ss.nick', String(nick || '').trim());
     },
+    getBoard: function () {
+      var b = getItem('ss.board', 'CBSE');
+      return (b === 'TN' || b === 'CBSE') ? b : 'CBSE';
+    },
+    setBoard: function (board) {
+      var b = (board === 'TN') ? 'TN' : 'CBSE';
+      setItem('ss.board', b);
+      return b;
+    },
     getAttempts: function () {
       return getItem('ss.attempts', []) || [];
     },
